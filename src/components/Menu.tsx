@@ -10,6 +10,7 @@ import {
   IonNote,
 } from "@ionic/react";
 
+import { useContext, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import {
   archiveOutline,
@@ -26,6 +27,7 @@ import {
   warningOutline,
   warningSharp,
 } from "ionicons/icons";
+import { AppContext } from "../AppContext";
 import "./Menu.css";
 
 interface AppPage {
@@ -38,37 +40,37 @@ interface AppPage {
 const appPages: AppPage[] = [
   {
     title: "Inbox",
-    url: "/page/Inbox",
+    url: "/test0",
     iosIcon: mailOutline,
     mdIcon: mailSharp,
   },
   {
     title: "Outbox",
-    url: "/page/Outbox",
+    url: "/test1",
     iosIcon: paperPlaneOutline,
     mdIcon: paperPlaneSharp,
   },
   {
     title: "Favorites",
-    url: "/page/Favorites",
+    url: "/test2",
     iosIcon: heartOutline,
     mdIcon: heartSharp,
   },
   {
     title: "Archived",
-    url: "/page/Archived",
+    url: "/test3",
     iosIcon: archiveOutline,
     mdIcon: archiveSharp,
   },
   {
     title: "Trash",
-    url: "/page/Trash",
+    url: "/test4",
     iosIcon: trashOutline,
     mdIcon: trashSharp,
   },
   {
     title: "Spam",
-    url: "/page/Spam",
+    url: "/test5",
     iosIcon: warningOutline,
     mdIcon: warningSharp,
   },
@@ -78,6 +80,11 @@ const labels = ["Family", "Friends", "Notes", "Work", "Travel", "Reminders"];
 
 const Menu: React.FC = () => {
   const location = useLocation();
+  const { sharedValue, setSharedValue } = useContext(AppContext);
+
+  useEffect(() => {
+    console.log(sharedValue);
+  }, [sharedValue]);
 
   return (
     <IonMenu contentId="main" type="overlay">
@@ -90,7 +97,10 @@ const Menu: React.FC = () => {
               <IonMenuToggle key={index} autoHide={false}>
                 <IonItem
                   className={
-                    location.pathname === appPage.url ? "selected" : ""
+                    sharedValue.lastViewedElement ===
+                    appPage.url.substr(1, appPage.url.length)
+                      ? "selected"
+                      : ""
                   }
                   routerLink={appPage.url}
                   routerDirection="none"

@@ -8,27 +8,42 @@ import {
   IonToolbar,
   IonButton,
 } from "@ionic/react";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { useParams } from "react-router";
 import ExploreContainer from "../components/ExploreContainer";
+import { AppContext } from "../AppContext";
 import "./Page.css";
 
 const Page: React.FC = () => {
   const { anchor = "home" } = useParams<{ anchor: string }>();
   const [visibleElements, setVisibleElements] = useState<string[]>([]);
+  const { sharedValue, setSharedValue } = useContext(AppContext);
 
   useEffect(() => {
     if (anchor !== "home") {
+      console.log("scrolling...");
       setTimeout(() => {
         console.log(anchor);
         var elmnt = document.getElementById("anchor_" + anchor);
         elmnt?.scrollIntoView({ behavior: "smooth" });
-      }, 500);
+      }, 250);
     }
-  }, []);
+  }, [anchor]);
 
   useEffect(() => {
     console.log(visibleElements);
+
+    let lastElement = null;
+    for (var i = 0; i < 10; i++) {
+      if (visibleElements.includes(`test${i}`)) {
+        lastElement = `test${i}`;
+        if (document.body.scrollTop === 0) {
+          break;
+        }
+      }
+    }
+
+    setSharedValue({ lastViewedElement: lastElement });
   }, [visibleElements]);
 
   return (
@@ -48,12 +63,6 @@ const Page: React.FC = () => {
             <IonTitle size="large">{anchor}</IonTitle>
           </IonToolbar>
         </IonHeader>
-        <IonButton
-          onClick={() => {
-            var elmnt = document.getElementById("test4");
-            elmnt!.scrollIntoView({ behavior: "smooth" });
-          }}
-        />
 
         {[...Array(10)].map((_, n) => (
           <ExploreContainer
