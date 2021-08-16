@@ -32,10 +32,7 @@ const App: React.FC = () => {
           <IonSplitPane contentId="main" className="split-pane">
             <Menu />
             <IonRouterOutlet id="main">
-              <Route path="/" exact={true}>
-                <Page />
-              </Route>
-              <Route path="/:anchor" exact={true}>
+              <Route path="/:anchor?" exact={true}>
                 <Page />
               </Route>
             </IonRouterOutlet>

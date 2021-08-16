@@ -1,11 +1,11 @@
 import React from "react";
 
 type AppDataInterface = {
-  lastViewedElement: string | null;
+  lastViewedElement: string;
 };
 
 const initialState = {
-  lastViewedElement: null,
+  lastViewedElement: "test0",
 };
 
 type AppContextInterface = {

@@ -11,7 +11,7 @@ import {
 } from "@ionic/react";
 
 import { useContext, useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useHistory } from "react-router-dom";
 import {
   archiveOutline,
   archiveSharp,
@@ -80,10 +80,11 @@ const labels = ["Family", "Friends", "Notes", "Work", "Travel", "Reminders"];
 
 const Menu: React.FC = () => {
   const location = useLocation();
-  const { sharedValue, setSharedValue } = useContext(AppContext);
+  const history = useHistory();
+  const { sharedValue } = useContext(AppContext);
 
   useEffect(() => {
-    console.log(sharedValue);
+    console.log("sharedValue: ", sharedValue);
   }, [sharedValue]);
 
   return (
@@ -102,10 +103,12 @@ const Menu: React.FC = () => {
                       ? "selected"
                       : ""
                   }
-                  routerLink={appPage.url}
-                  routerDirection="none"
+                  // routerLink={appPage.url}
+                  // routerDirection="none"
+                  onClick={() => history.replace(appPage.url)}
                   lines="none"
                   detail={false}
+                  button
                 >
                   <IonIcon
                     slot="start"
