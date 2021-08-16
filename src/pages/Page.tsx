@@ -51,7 +51,7 @@ const Page: React.FC = () => {
           <IonButtons slot="start">
             <IonMenuButton />
           </IonButtons>
-          <IonTitle>{anchor}</IonTitle>
+          <IonTitle>{sharedValue.lastViewedElement}</IonTitle>
         </IonToolbar>
       </IonHeader>
 
