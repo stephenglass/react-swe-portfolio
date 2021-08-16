@@ -1,5 +1,7 @@
 ion-menu ion-content {
-  --background: var(--ion-item-background, var(--ion-background-color, #fff));
+  /* --background: var(--ion-item-background, var(--ion-background-color, #fff)); */
+  --background: #efefef;
+  --ion-item-background: #efefef;
 }
 
 ion-menu.md ion-content {

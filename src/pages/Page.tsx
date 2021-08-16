@@ -11,8 +11,11 @@ import {
 import { useEffect, useState, useContext, useRef } from "react";
 import { useParams } from "react-router";
 import ExploreContainer from "../components/ExploreContainer";
+import SectionContainer from "../components/SectionContainer";
 import { AppContext } from "../AppContext";
 import "./Page.css";
+import IntroductionArea from "../components/IntroductionArea";
+import SectionDivider from "../components/SectionDivider";
 
 const Page: React.FC = () => {
   const isDomRendered = useRef(false);
@@ -44,24 +47,20 @@ const Page: React.FC = () => {
           console.log("element not exists");
         }
       }, 250);
-    } else {
-      console.log("not scrolling");
     }
   }, [anchor]);
 
   useEffect(() => {
     console.log("visibleElements: ", visibleElements);
-    if (isDomRendered.current) {
-      if (visibleElements.length > 0) {
-        for (var i = 0; i < 10; i++) {
-          const element = `test${i}`;
-          if (visibleElements.includes(element)) {
-            if (sharedValue.lastViewedElement !== element) {
-              console.log("setting to: ", element);
-              setSharedValue({ lastViewedElement: element });
-            }
-            return;
+    if (isDomRendered.current && visibleElements.length > 0) {
+      for (var i = 0; i < 10; i++) {
+        const element = `test${i}`;
+        if (visibleElements.includes(element)) {
+          if (sharedValue.lastViewedElement !== element) {
+            console.log("setting to: ", element);
+            setSharedValue({ lastViewedElement: element });
           }
+          return;
         }
       }
     }
@@ -78,27 +77,33 @@ const Page: React.FC = () => {
         </IonToolbar>
       </IonHeader>
 
-      <IonContent fullscreen>
-        <IonHeader collapse="condense">
+      <IonContent className="main-page" fullscreen>
+        {/* <IonHeader collapse="condense">
           <IonToolbar>
             <IonTitle size="large">{anchor}</IonTitle>
           </IonToolbar>
-        </IonHeader>
-        {/* <IonButton
-          onClick={() => {
-            var elmnt = document.getElementById("anchor_test4");
-            elmnt!.scrollIntoView({ behavior: "smooth" });
-          }}
-        >
-          Test Scroll
-        </IonButton> */}
-        {[...Array(10)].map((_, n) => (
-          <ExploreContainer
+        </IonHeader> */}
+
+        <div className="page-container">
+          <SectionContainer
+            name="Introduction"
+            visibility={[visibleElements, setVisibleElements]}
+          >
+            <IntroductionArea />
+          </SectionContainer>
+
+          <SectionDivider text="Hello" />
+
+          {/* {[...Array(10)].map((_, n) => (
+          <SectionContainer
             key={n}
             name={`test${n}`}
             visibility={[visibleElements, setVisibleElements]}
-          />
-        ))}
+          >
+            <p>Hello</p>
+          </SectionContainer>
+        ))} */}
+        </div>
       </IonContent>
     </IonPage>
   );
