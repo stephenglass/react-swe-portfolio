@@ -1,11 +1,35 @@
-import { IonButtons, IonContent, IonHeader, IonMenuButton, IonPage, IonTitle, IonToolbar } from '@ionic/react';
-import { useParams } from 'react-router';
-import ExploreContainer from '../components/ExploreContainer';
-import './Page.css';
+import {
+  IonButtons,
+  IonContent,
+  IonHeader,
+  IonMenuButton,
+  IonPage,
+  IonTitle,
+  IonToolbar,
+  IonButton,
+} from "@ionic/react";
+import { useEffect, useState } from "react";
+import { useParams } from "react-router";
+import ExploreContainer from "../components/ExploreContainer";
+import "./Page.css";
 
 const Page: React.FC = () => {
+  const { anchor = "home" } = useParams<{ anchor: string }>();
+  const [visibleElements, setVisibleElements] = useState<string[]>([]);
 
-  const { name } = useParams<{ name: string; }>();
+  useEffect(() => {
+    if (anchor !== "home") {
+      setTimeout(() => {
+        console.log(anchor);
+        var elmnt = document.getElementById("anchor_" + anchor);
+        elmnt?.scrollIntoView({ behavior: "smooth" });
+      }, 500);
+    }
+  }, []);
+
+  useEffect(() => {
+    console.log(visibleElements);
+  }, [visibleElements]);
 
   return (
     <IonPage>
@@ -14,17 +38,30 @@ const Page: React.FC = () => {
           <IonButtons slot="start">
             <IonMenuButton />
           </IonButtons>
-          <IonTitle>{name}</IonTitle>
+          <IonTitle>{anchor}</IonTitle>
         </IonToolbar>
       </IonHeader>
 
       <IonContent fullscreen>
         <IonHeader collapse="condense">
           <IonToolbar>
-            <IonTitle size="large">{name}</IonTitle>
+            <IonTitle size="large">{anchor}</IonTitle>
           </IonToolbar>
         </IonHeader>
-        <ExploreContainer name={name} />
+        <IonButton
+          onClick={() => {
+            var elmnt = document.getElementById("test4");
+            elmnt!.scrollIntoView({ behavior: "smooth" });
+          }}
+        />
+
+        {[...Array(10)].map((_, n) => (
+          <ExploreContainer
+            key={n}
+            name={`test${n}`}
+            visibility={[visibleElements, setVisibleElements]}
+          />
+        ))}
       </IonContent>
     </IonPage>
   );
