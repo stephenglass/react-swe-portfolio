@@ -1,0 +1,7 @@
+{
+  "name": "ionic-stephen-portfolio",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
