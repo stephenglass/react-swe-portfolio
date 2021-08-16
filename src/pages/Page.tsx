@@ -37,9 +37,7 @@ const Page: React.FC = () => {
     for (var i = 0; i < 10; i++) {
       if (visibleElements.includes(`test${i}`)) {
         lastElement = `test${i}`;
-        if (document.body.scrollTop === 0) {
-          break;
-        }
+        break;
       }
     }
 
