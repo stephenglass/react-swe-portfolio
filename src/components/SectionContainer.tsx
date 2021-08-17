@@ -27,7 +27,7 @@ const SectionContainer: React.FC<ContainerProps> = ({
   }, [isVisible]);
 
   return (
-    <div ref={ref}>
+    <div ref={ref} className="section-container">
       <div id={"anchor_" + name} className="anchor"></div>
       {children}
     </div>

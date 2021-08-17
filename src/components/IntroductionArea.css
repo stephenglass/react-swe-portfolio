@@ -1,22 +1,3 @@
-/* .spacing {
-  padding: 0.5em;
-}
-
-.introduction-container {
-  margin: 1.5em;
-}
-
-@media only screen and (min-width: 990px) {
-  .introduction-container {
-    margin: auto;
-    width: 50%;
-  }
-
-  .spacing {
-    padding: 3em;
-  }
-} */
-
 .introduction-container h1 {
   font-size: 72px;
   color: #c5cce0;
@@ -35,24 +16,8 @@
   color: #4c8dff;
 }
 
-.container strong {
-  font-size: 20px;
-  line-height: 26px;
-}
-
 .introduction-container p {
   font-size: 16px;
   line-height: 22px;
   color: #bcc2d1;
-  /* color: #8c8c8c; */
-  /* margin: 0; */
-}
-
-.container a {
-  text-decoration: none;
-}
-
-.anchor {
-  position: absolute;
-  margin-top: -60px;
 }

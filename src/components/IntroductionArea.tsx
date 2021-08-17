@@ -15,7 +15,7 @@ const IntroductionArea: React.FC = () => {
       <h1>
         <strong>Stephen Glass.</strong>
       </h1>
-      <h2>Software engineer currently working at AT&T.</h2>
+      <h2>Software Engineer @ AT&T</h2>
 
       <p>
         I build web apps and more using latest technologies. Check out what I've
