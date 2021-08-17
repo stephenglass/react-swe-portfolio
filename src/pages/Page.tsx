@@ -15,7 +15,7 @@ import "./Page.css";
 import SectionDivider from "../components/SectionDivider";
 import NoPage from "../components/NoPage";
 import { appSections } from "../data/AppData";
-import { EventType } from "../data/AppConstants";
+import { Constants, EventType } from "../data/AppConstants";
 
 const Page: React.FC = () => {
   const isDomRendered = useRef(false);
@@ -27,7 +27,7 @@ const Page: React.FC = () => {
     // hack to make sure all components rendered before attempt to figure out component in viewport
     setTimeout(() => {
       isDomRendered.current = true;
-    }, 250);
+    }, Constants.DomLoadingTime);
     return () => {
       isDomRendered.current = false;
     };
@@ -69,7 +69,7 @@ const Page: React.FC = () => {
           element.scrollIntoView({ behavior: "smooth" });
         }
       },
-      event === EventType.TypeReload ? 250 : 0
+      event === EventType.TypeReload ? Constants.DomLoadingTime : 0
     ); // if change of url, need add time to wait for dom to render
   };
 
