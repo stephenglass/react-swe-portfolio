@@ -28,58 +28,11 @@ import {
   warningSharp,
 } from "ionicons/icons";
 import { AppContext } from "../AppContext";
+import { appSections } from "../data/AppData";
 import "./Menu.css";
-
-interface AppPage {
-  url: string;
-  iosIcon: string;
-  mdIcon: string;
-  title: string;
-}
-
-const appPages: AppPage[] = [
-  {
-    title: "Inbox",
-    url: "/test0",
-    iosIcon: mailOutline,
-    mdIcon: mailSharp,
-  },
-  {
-    title: "Outbox",
-    url: "/test1",
-    iosIcon: paperPlaneOutline,
-    mdIcon: paperPlaneSharp,
-  },
-  {
-    title: "Favorites",
-    url: "/test2",
-    iosIcon: heartOutline,
-    mdIcon: heartSharp,
-  },
-  {
-    title: "Archived",
-    url: "/test3",
-    iosIcon: archiveOutline,
-    mdIcon: archiveSharp,
-  },
-  {
-    title: "Trash",
-    url: "/test4",
-    iosIcon: trashOutline,
-    mdIcon: trashSharp,
-  },
-  {
-    title: "Spam",
-    url: "/test5",
-    iosIcon: warningOutline,
-    mdIcon: warningSharp,
-  },
-];
-
-const labels = ["Family", "Friends", "Notes", "Work", "Travel", "Reminders"];
+import { menuLinks } from "../data/Links";
 
 const Menu: React.FC = () => {
-  const location = useLocation();
   const history = useHistory();
   const { sharedValue } = useContext(AppContext);
 
@@ -92,22 +45,21 @@ const Menu: React.FC = () => {
       <IonContent>
         <IonList id="inbox-list">
           <IonListHeader>Navigation</IonListHeader>
-          <IonNote>hi@ionicframework.com</IonNote>
-          {appPages.map((appPage, index) => {
+          {/* <IonNote>hi@ionicframework.com</IonNote> */}
+          {appSections.map((appPage, index) => {
             return (
               <IonMenuToggle key={index} autoHide={false}>
                 <IonItem
                   className={
-                    sharedValue.lastViewedElement ===
-                    appPage.url.substr(1, appPage.url.length)
+                    sharedValue.lastViewedElement === appPage.title
                       ? "selected"
                       : ""
                   }
-                  // routerLink={appPage.url}
-                  // routerDirection="none"
                   onClick={() => history.replace(appPage.url)}
                   lines="none"
                   detail={false}
+                  // routerLink={appPage.url}
+                  // routerDirection="none"
                   button
                 >
                   <IonIcon
@@ -123,11 +75,11 @@ const Menu: React.FC = () => {
         </IonList>
 
         <IonList id="labels-list">
-          <IonListHeader>Labels</IonListHeader>
-          {labels.map((label, index) => (
-            <IonItem lines="none" key={index}>
-              <IonIcon slot="start" icon={bookmarkOutline} />
-              <IonLabel>{label}</IonLabel>
+          <IonListHeader>Links</IonListHeader>
+          {menuLinks.map((link, index) => (
+            <IonItem lines="none" key={index} href={link.url}>
+              <IonIcon slot="start" ios={link.iosIcon} md={link.mdIcon} />
+              <IonLabel>{link.title}</IonLabel>
             </IonItem>
           ))}
         </IonList>

@@ -1,0 +1,16 @@
+.about-container {
+  margin: auto;
+  align-items: center;
+}
+
+.about-container .avatar {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 200px;
+  height: 200px;
+
+  box-shadow: 5px 5px 5px #252736;
+  -moz-box-shadow: 5px 5px 5px #252736;
+  -webkit-box-shadow: 5px 5px 5px #252736;
+}

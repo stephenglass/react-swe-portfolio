@@ -1,11 +1,12 @@
 import React from "react";
+import { appSections } from "./data/AppData";
 
 type AppDataInterface = {
   lastViewedElement: string;
 };
 
 const initialState = {
-  lastViewedElement: "test0",
+  lastViewedElement: appSections[0].title,
 };
 
 type AppContextInterface = {
