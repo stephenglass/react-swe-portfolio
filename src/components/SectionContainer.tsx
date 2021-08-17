@@ -20,9 +20,9 @@ const SectionContainer: React.FC<ContainerProps> = ({
     if (isVisible && !visibleElements.includes(name)) {
       setVisibleElements([...visibleElements, name]);
     } else if (!isVisible && visibleElements.includes(name)) {
-      setVisibleElements([
-        ...visibleElements.filter((elements) => elements !== name),
-      ]);
+      setVisibleElements(
+        visibleElements.filter((elements) => elements !== name)
+      );
     }
   }, [isVisible]);
 
