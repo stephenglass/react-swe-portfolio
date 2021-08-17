@@ -11,22 +11,7 @@ import {
 } from "@ionic/react";
 
 import { useContext, useEffect } from "react";
-import { useLocation, useHistory } from "react-router-dom";
-import {
-  archiveOutline,
-  archiveSharp,
-  bookmarkOutline,
-  heartOutline,
-  heartSharp,
-  mailOutline,
-  mailSharp,
-  paperPlaneOutline,
-  paperPlaneSharp,
-  trashOutline,
-  trashSharp,
-  warningOutline,
-  warningSharp,
-} from "ionicons/icons";
+import { useHistory } from "react-router-dom";
 import { AppContext } from "../AppContext";
 import { appSections } from "../data/AppData";
 import "./Menu.css";

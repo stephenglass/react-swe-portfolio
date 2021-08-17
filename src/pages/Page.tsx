@@ -15,7 +15,6 @@ import "./Page.css";
 import SectionDivider from "../components/SectionDivider";
 import NoPage from "../components/NoPage";
 import { appSections } from "../data/AppData";
-import { transgender } from "ionicons/icons";
 
 const Page: React.FC = () => {
   const isDomRendered = useRef(false);
