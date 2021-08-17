@@ -20,7 +20,11 @@ const Menu: React.FC = () => {
   const { sharedValue, setSharedValue } = useContext(AppContext);
 
   return (
-    <IonMenu contentId="main" type="overlay">
+    <IonMenu
+      contentId="main"
+      type="overlay"
+      disabled={sharedValue.pageNotFound}
+    >
       <IonContent>
         <IonList id="inbox-list">
           <IonListHeader>Navigation</IonListHeader>

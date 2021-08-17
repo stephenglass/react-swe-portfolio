@@ -15,11 +15,11 @@ import "./Page.css";
 import SectionDivider from "../components/SectionDivider";
 import NoPage from "../components/NoPage";
 import { appSections } from "../data/AppData";
+import { EventType } from "../data/AppConstants";
 
 const Page: React.FC = () => {
   const isDomRendered = useRef(false);
   const { anchor = "undefined" } = useParams<{ anchor: string }>();
-  const [pageNotFound, setPageNotFound] = useState<boolean>(false);
   const [visibleElements, setVisibleElements] = useState<string[]>([]);
   const { sharedValue, setSharedValue } = useContext(AppContext);
 
@@ -34,32 +34,44 @@ const Page: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    if (anchor !== "undefined" || sharedValue.scrollTo !== undefined) {
-      var scroll = anchor;
-      // first check if this is a scroll event via click or handling url parameter
-      if (sharedValue.scrollTo !== undefined) {
-        scroll = sharedValue.scrollTo;
-        setSharedValue({ ...sharedValue, scrollTo: undefined });
-      }
+    if (sharedValue.scrollTo !== undefined) {
+      scrollTo(EventType.TypeAction, sharedValue.scrollTo);
+      setSharedValue({ ...sharedValue, scrollTo: undefined });
+    }
+  }, [sharedValue.scrollTo]);
 
-      console.log("anchor: ", scroll);
-      // verify provided anchor link matches one in the database
+  useEffect(() => {
+    if (anchor !== "undefined") {
       for (var i = 0; i < appSections.length; i++) {
-        if (appSections[i].url.substr(1) === scroll) {
-          setPageNotFound(false);
-          const element = document.getElementById(`anchor_${scroll}`);
-          if (element) {
-            console.log("going to: ", scroll);
-            element.scrollIntoView({ behavior: "smooth" });
-          }
+        if (appSections[i].url.substr(1) === anchor) {
+          scrollTo(EventType.TypeReload, anchor);
           return;
         }
       }
       // return not met, no anchor point matched. 404
-      setPageNotFound(true);
+      setSharedValue({
+        ...sharedValue,
+        pageNotFound: true,
+        lastViewedElement: "Error Page",
+      });
       console.log("404?");
     }
-  }, [sharedValue.scrollTo, anchor]);
+  }, [anchor]);
+
+  const scrollTo = (event: EventType, anchor: string) => {
+    console.log("anchor: ", anchor);
+    // verify provided anchor link matches one in the database
+    setTimeout(
+      () => {
+        const element = document.getElementById(`anchor_${anchor}`);
+        if (element) {
+          console.log("going to: ", anchor);
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      },
+      event === EventType.TypeReload ? 250 : 0
+    ); // if change of url, need add time to wait for dom to render
+  };
 
   useEffect(() => {
     console.log("visibleElements: ", visibleElements);
@@ -93,7 +105,7 @@ const Page: React.FC = () => {
 
       <IonContent className="main-page" fullscreen>
         <div className="page-container">
-          {pageNotFound ? (
+          {sharedValue.pageNotFound ? (
             <NoPage />
           ) : (
             <>

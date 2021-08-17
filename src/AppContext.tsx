@@ -4,11 +4,13 @@ import { appSections } from "./data/AppData";
 type AppDataInterface = {
   lastViewedElement: string;
   scrollTo: string | undefined;
+  pageNotFound: boolean;
 };
 
 const initialState = {
   lastViewedElement: appSections[0].title,
   scrollTo: undefined,
+  pageNotFound: false,
 };
 
 type AppContextInterface = {
