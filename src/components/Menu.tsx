@@ -10,20 +10,14 @@ import {
   IonNote,
 } from "@ionic/react";
 
-import { useContext, useEffect } from "react";
-import { useHistory } from "react-router-dom";
+import { useContext } from "react";
 import { AppContext } from "../AppContext";
 import { appSections } from "../data/AppData";
 import "./Menu.css";
 import { menuLinks } from "../data/Links";
 
 const Menu: React.FC = () => {
-  const history = useHistory();
-  const { sharedValue } = useContext(AppContext);
-
-  useEffect(() => {
-    console.log("sharedValue: ", sharedValue);
-  }, [sharedValue]);
+  const { sharedValue, setSharedValue } = useContext(AppContext);
 
   return (
     <IonMenu contentId="main" type="overlay">
@@ -35,17 +29,20 @@ const Menu: React.FC = () => {
             return (
               <IonMenuToggle key={index} autoHide={false}>
                 <IonItem
+                  button
                   className={
                     sharedValue.lastViewedElement === appPage.title
                       ? "selected"
                       : ""
                   }
-                  onClick={() => history.replace(appPage.url)}
+                  onClick={() =>
+                    setSharedValue({
+                      ...sharedValue,
+                      scrollTo: appPage.url.substr(1),
+                    })
+                  }
                   lines="none"
                   detail={false}
-                  // routerLink={appPage.url}
-                  // routerDirection="none"
-                  button
                 >
                   <IonIcon
                     slot="start"

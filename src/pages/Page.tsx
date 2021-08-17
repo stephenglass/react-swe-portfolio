@@ -34,21 +34,24 @@ const Page: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    console.log("anchor: ", anchor);
-    if (anchor !== "undefined") {
+    if (anchor !== "undefined" || sharedValue.scrollTo !== undefined) {
+      var scroll = anchor;
+      // first check if this is a scroll event via click or handling url parameter
+      if (sharedValue.scrollTo !== undefined) {
+        scroll = sharedValue.scrollTo;
+        setSharedValue({ ...sharedValue, scrollTo: undefined });
+      }
+
+      console.log("anchor: ", scroll);
       // verify provided anchor link matches one in the database
       for (var i = 0; i < appSections.length; i++) {
-        if (appSections[i].url.substr(1) === anchor) {
+        if (appSections[i].url.substr(1) === scroll) {
           setPageNotFound(false);
-
-          console.log("scrolling...");
-          setTimeout(() => {
-            const element = document.getElementById(`anchor_${anchor}`);
-            if (element) {
-              console.log("going to: ", anchor);
-              element.scrollIntoView({ behavior: "smooth" });
-            }
-          }, 250);
+          const element = document.getElementById(`anchor_${scroll}`);
+          if (element) {
+            console.log("going to: ", scroll);
+            element.scrollIntoView({ behavior: "smooth" });
+          }
           return;
         }
       }
@@ -56,7 +59,7 @@ const Page: React.FC = () => {
       setPageNotFound(true);
       console.log("404?");
     }
-  }, [anchor]);
+  }, [sharedValue.scrollTo, anchor]);
 
   useEffect(() => {
     console.log("visibleElements: ", visibleElements);
@@ -66,7 +69,10 @@ const Page: React.FC = () => {
         if (visibleElements.includes(element)) {
           if (sharedValue.lastViewedElement !== element) {
             console.log("setting to: ", element);
-            setSharedValue({ lastViewedElement: appSections[i].title });
+            setSharedValue({
+              ...sharedValue,
+              lastViewedElement: appSections[i].title,
+            });
           }
           return;
         }

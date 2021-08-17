@@ -3,10 +3,12 @@ import { appSections } from "./data/AppData";
 
 type AppDataInterface = {
   lastViewedElement: string;
+  scrollTo: string | undefined;
 };
 
 const initialState = {
   lastViewedElement: appSections[0].title,
+  scrollTo: undefined,
 };
 
 type AppContextInterface = {
