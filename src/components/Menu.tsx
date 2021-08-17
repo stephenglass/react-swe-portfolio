@@ -29,20 +29,20 @@ const Menu: React.FC = () => {
         <IonList id="inbox-list">
           <IonListHeader>Navigation</IonListHeader>
           {/* <IonNote>hi@ionicframework.com</IonNote> */}
-          {appSections.map((appPage, index) => {
+          {appSections.map((appSection, index) => {
             return (
               <IonMenuToggle key={index} autoHide={false}>
                 <IonItem
                   button
                   className={
-                    sharedValue.lastViewedElement === appPage.title
+                    sharedValue.lastViewedElement === appSection.title
                       ? "selected"
                       : ""
                   }
                   onClick={() =>
                     setSharedValue({
                       ...sharedValue,
-                      scrollTo: appPage.url.substr(1),
+                      scrollTo: appSection.url.substr(1),
                     })
                   }
                   lines="none"
@@ -50,10 +50,10 @@ const Menu: React.FC = () => {
                 >
                   <IonIcon
                     slot="start"
-                    ios={appPage.iosIcon}
-                    md={appPage.mdIcon}
+                    ios={appSection.iosIcon}
+                    md={appSection.mdIcon}
                   />
-                  <IonLabel>{appPage.title}</IonLabel>
+                  <IonLabel>{appSection.title}</IonLabel>
                 </IonItem>
               </IonMenuToggle>
             );
