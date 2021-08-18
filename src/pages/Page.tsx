@@ -7,7 +7,7 @@ import {
   IonTitle,
   IonToolbar,
 } from "@ionic/react";
-import { useEffect, useState, useContext, useRef } from "react";
+import { useEffect, useState, useContext, useRef, useCallback } from "react";
 import { useParams } from "react-router";
 import SectionContainer from "../components/SectionContainer";
 import { AppContext } from "../AppContext";
@@ -20,7 +20,7 @@ import { Constants, EventType } from "../data/AppConstants";
 const Page: React.FC = () => {
   const isDomRendered = useRef(false);
   const { anchor = "undefined" } = useParams<{ anchor: string }>();
-  const [visibleElements, setVisibleElements] = useState<string[]>([]);
+  const [visibleElements, setVisibleElements] = useState<number[]>([]);
   const { sharedValue, setSharedValue } = useContext(AppContext);
 
   useEffect(() => {
@@ -38,6 +38,7 @@ const Page: React.FC = () => {
       scrollTo(EventType.TypeAction, sharedValue.scrollTo);
       setSharedValue({ ...sharedValue, scrollTo: undefined });
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [sharedValue.scrollTo]);
 
   useEffect(() => {
@@ -56,7 +57,24 @@ const Page: React.FC = () => {
       });
       console.log("404?");
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [anchor]);
+
+  useEffect(() => {
+    if (isDomRendered.current && visibleElements.length > 0) {
+      console.log("visibleElements: ", visibleElements);
+      const index = Math.min(...visibleElements);
+      const element = appSections[index].url.substr(1);
+      if (sharedValue.lastViewedElement !== element) {
+        console.log("setting to: ", element);
+        setSharedValue({
+          ...sharedValue,
+          lastViewedElement: appSections[index].title,
+        });
+      }
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isDomRendered, visibleElements]);
 
   const scrollTo = (event: EventType, anchor: string) => {
     console.log("anchor: ", anchor);
@@ -73,24 +91,27 @@ const Page: React.FC = () => {
     ); // if change of url, need add time to wait for dom to render
   };
 
-  useEffect(() => {
-    console.log("visibleElements: ", visibleElements);
-    if (isDomRendered.current && visibleElements.length > 0) {
-      for (var i = 0; i < appSections.length; i++) {
-        const element = appSections[i].url.substr(1);
-        if (visibleElements.includes(element)) {
-          if (sharedValue.lastViewedElement !== element) {
-            console.log("setting to: ", element);
-            setSharedValue({
-              ...sharedValue,
-              lastViewedElement: appSections[i].title,
-            });
-          }
-          return;
-        }
+  const addVisibleElement = useCallback(
+    (index: number) => {
+      // handle the click event
+      if (!visibleElements.includes(index)) {
+        setVisibleElements([...visibleElements, index]);
       }
-    }
-  }, [isDomRendered, visibleElements]);
+    },
+    [visibleElements]
+  );
+
+  const removeVisibleElement = useCallback(
+    (index: number) => {
+      // handle the click event
+      if (visibleElements.includes(index)) {
+        setVisibleElements(
+          visibleElements.filter((elements) => elements !== index)
+        );
+      }
+    },
+    [visibleElements]
+  );
 
   return (
     <IonPage>
@@ -112,8 +133,10 @@ const Page: React.FC = () => {
               {appSections.map((n, index) => (
                 <SectionContainer
                   key={index}
+                  index={index}
                   name={n.url.substr(1)}
-                  visibility={[visibleElements, setVisibleElements]}
+                  addElement={addVisibleElement}
+                  removeElement={removeVisibleElement}
                 >
                   {n.divider && <SectionDivider text={n.title} />}
 

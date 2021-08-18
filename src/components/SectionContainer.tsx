@@ -1,30 +1,36 @@
 import "./SectionContainer.css";
 import useIntersection from "./Intersection";
-import { useRef, useEffect } from "react";
+import { useInView } from "react-intersection-observer";
+import { useEffect } from "react";
 
 interface ContainerProps {
+  index: number;
   name: string;
   children?: React.ReactNode;
-  visibility: [string[], React.Dispatch<React.SetStateAction<string[]>>];
+  addElement: (index: number) => void;
+  removeElement: (index: number) => void;
 }
 
 const SectionContainer: React.FC<ContainerProps> = ({
+  index,
   name,
   children,
-  visibility: [visibleElements, setVisibleElements],
+  addElement,
+  removeElement,
 }) => {
-  const ref = useRef<HTMLInputElement | null>(null);
-  const isVisible = useIntersection(ref, "-25px");
+  // const ref = useRef<HTMLInputElement | null>(null);
+  // const isVisible = useIntersection(ref, "-25px");
+  const [ref, inView] = useInView({
+    threshold: 0.75,
+  });
 
   useEffect(() => {
-    if (isVisible && !visibleElements.includes(name)) {
-      setVisibleElements([...visibleElements, name]);
-    } else if (!isVisible && visibleElements.includes(name)) {
-      setVisibleElements(
-        visibleElements.filter((elements) => elements !== name)
-      );
+    if (inView) {
+      addElement(index);
+    } else {
+      removeElement(index);
     }
-  }, [isVisible]);
+  }, [inView]);
 
   return (
     <div ref={ref} className="section-container">

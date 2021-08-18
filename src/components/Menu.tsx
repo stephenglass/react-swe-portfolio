@@ -7,7 +7,6 @@ import {
   IonListHeader,
   IonMenu,
   IonMenuToggle,
-  IonNote,
 } from "@ionic/react";
 
 import { useContext } from "react";
@@ -28,7 +27,6 @@ const Menu: React.FC = () => {
       <IonContent>
         <IonList id="inbox-list">
           <IonListHeader>Navigation</IonListHeader>
-          {/* <IonNote>hi@ionicframework.com</IonNote> */}
           {appSections.map((appSection, index) => {
             return (
               <IonMenuToggle key={index} autoHide={false}>
