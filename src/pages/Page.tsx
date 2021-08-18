@@ -7,7 +7,14 @@ import {
   IonTitle,
   IonToolbar,
 } from "@ionic/react";
-import { useEffect, useState, useContext, useRef, useCallback } from "react";
+import {
+  useEffect,
+  useState,
+  useContext,
+  useRef,
+  useCallback,
+  Suspense,
+} from "react";
 import { useParams } from "react-router";
 import SectionContainer from "../components/SectionContainer";
 import { AppContext } from "../AppContext";
@@ -139,8 +146,9 @@ const Page: React.FC = () => {
                   removeElement={removeVisibleElement}
                 >
                   {n.divider && <SectionDivider text={n.title} />}
-
-                  <n.component key={index} />
+                  <Suspense fallback={<h1>Loading…</h1>}>
+                    <n.component key={index} />
+                  </Suspense>
                 </SectionContainer>
               ))}
             </>

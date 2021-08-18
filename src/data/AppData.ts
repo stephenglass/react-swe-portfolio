@@ -1,17 +1,15 @@
 import {
   paperPlaneOutline,
   paperPlaneSharp,
-  mailOutline,
-  mailSharp,
   homeOutline,
   homeSharp,
   personOutline,
   personSharp,
 } from "ionicons/icons";
-import React from "react";
+import React, { lazy } from "react";
 
-import AboutArea from "../components/AboutArea";
 import IntroductionArea from "../components/IntroductionArea";
+const AboutArea = lazy(() => import("../components/AboutArea"));
 
 interface AppSection {
   url: string;
