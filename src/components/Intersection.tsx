@@ -14,6 +14,7 @@ const useIntersection = (ref: RefObject<any>, margin: string) => {
     return () => {
       observer.disconnect();
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return isIntersecting;

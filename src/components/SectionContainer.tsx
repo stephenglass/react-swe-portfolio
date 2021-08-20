@@ -1,5 +1,4 @@
 import "./SectionContainer.css";
-import useIntersection from "./Intersection";
 import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
 
@@ -30,6 +29,7 @@ const SectionContainer: React.FC<ContainerProps> = ({
     } else {
       removeElement(index);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [inView]);
 
   return (

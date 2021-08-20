@@ -10,10 +10,10 @@
   margin: 1.5em;
 }
 
-@media only screen and (min-width: 990px) {
+@media only screen and (min-width: 1200px) {
   .page-container {
     margin: auto;
-    width: 50%;
+    width: 60%;
   }
 
   .spacing {

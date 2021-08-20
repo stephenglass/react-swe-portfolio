@@ -16,15 +16,15 @@ import {
   Suspense,
 } from "react";
 import { useParams } from "react-router";
-import SectionContainer from "../components/SectionContainer";
 import { AppContext } from "../AppContext";
-import "./Page.css";
-import SectionDivider from "../components/SectionDivider";
-import NoPage from "../components/NoPage";
 import { appSections } from "../data/AppData";
 import { Constants, EventType } from "../data/AppConstants";
+import SectionContainer from "../components/SectionContainer";
+import SectionDivider from "../components/SectionDivider";
+import NoPage from "../components/NoPage";
+import "./Home.css";
 
-const Page: React.FC = () => {
+const Home: React.FC = () => {
   const isDomRendered = useRef(false);
   const { anchor = "undefined" } = useParams<{ anchor: string }>();
   const [visibleElements, setVisibleElements] = useState<number[]>([]);
@@ -147,7 +147,7 @@ const Page: React.FC = () => {
                 >
                   {n.divider && <SectionDivider text={n.title} />}
                   <Suspense fallback={<h1>Loading…</h1>}>
-                    <n.component key={index} />
+                    <n.component key={index} {...n.props} />
                   </Suspense>
                 </SectionContainer>
               ))}
@@ -159,4 +159,4 @@ const Page: React.FC = () => {
   );
 };
 
-export default Page;
+export default Home;
