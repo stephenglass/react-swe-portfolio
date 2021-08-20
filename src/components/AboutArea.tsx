@@ -6,8 +6,12 @@ import {
   IonRow,
   IonChip,
 } from "@ionic/react";
-import { AboutSkills } from "../interfaces/AboutSkills";
 import "./AboutArea.css";
+
+export interface AboutSkills {
+  text: string;
+  color: string;
+}
 
 export interface ContainerProps {
   reverse?: boolean;

@@ -7,11 +7,21 @@ import {
   personSharp,
 } from "ionicons/icons";
 import { lazy } from "react";
-import { AppSection } from "../interfaces/AppSection";
 import { aboutData } from "./AboutData";
+import { introductionData } from "./IntroductionData";
 
 import IntroductionArea from "../components/IntroductionArea";
 const AboutArea = lazy(() => import("../components/AboutArea"));
+
+interface AppSection {
+  url: string;
+  iosIcon: string;
+  mdIcon: string;
+  title: string;
+  divider?: boolean;
+  component: React.FC<any> | React.LazyExoticComponent<React.FC<any>>;
+  props?: React.ComponentProps<any>;
+}
 
 export const appSections: AppSection[] = [
   {
@@ -20,6 +30,7 @@ export const appSections: AppSection[] = [
     iosIcon: homeOutline,
     mdIcon: homeSharp,
     component: IntroductionArea,
+    props: introductionData,
   },
   {
     title: "About",
@@ -30,36 +41,4 @@ export const appSections: AppSection[] = [
     props: aboutData,
     divider: true,
   },
-  // {
-  //   title: "About2",
-  //   url: "/about2",
-  //   iosIcon: paperPlaneOutline,
-  //   mdIcon: paperPlaneSharp,
-  //   component: AboutArea,
-  //   divider: true,
-  // },
-  // {
-  //   title: "About3",
-  //   url: "/about3",
-  //   iosIcon: paperPlaneOutline,
-  //   mdIcon: paperPlaneSharp,
-  //   component: AboutArea,
-  //   divider: true,
-  // },
-  // {
-  //   title: "About4",
-  //   url: "/about4",
-  //   iosIcon: paperPlaneOutline,
-  //   mdIcon: paperPlaneSharp,
-  //   component: AboutArea,
-  //   divider: true,
-  // },
-  // {
-  //   title: "About5",
-  //   url: "/about5",
-  //   iosIcon: paperPlaneOutline,
-  //   mdIcon: paperPlaneSharp,
-  //   component: AboutArea,
-  //   divider: true,
-  // },
 ];

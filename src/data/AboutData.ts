@@ -1,5 +1,7 @@
-import { AboutSkills } from "../interfaces/AboutSkills";
-import { ContainerProps as AboutProps } from "../components/AboutArea";
+import {
+  ContainerProps as AboutProps,
+  AboutSkills,
+} from "../components/AboutArea";
 
 const aboutText: string = `My journey into software began in 2008 creating online multiplayer video game modifications using a simple embedded scripting language called <a href="#">PAWN</a>.
 
