@@ -3,7 +3,7 @@ import { ContainerProps as AboutProps } from "../components/AboutArea";
 
 const aboutText: string = `My journey into software began in 2008 creating online multiplayer video game modifications using a simple embedded scripting language called <a href="#">PAWN</a>.
 
-This led to web dev interests using the <a href="#">LAMP</a> stack. My software experience has since grown tremendously to include modern frameworks in addition to embedded software, databases, and more.
+This led to web development exploration using the <a href="#">LAMP</a> stack. My software experience has since grown tremendously to include modern frameworks in addition to embedded software, databases, and more.
 
 `;
 
