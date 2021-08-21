@@ -7,14 +7,21 @@ import {
   personSharp,
   flaskOutline,
   flaskSharp,
+  starOutline,
+  starSharp,
+  ribbonOutline,
+  ribbonSharp,
 } from "ionicons/icons";
 import { lazy } from "react";
 import { aboutData } from "./AboutData";
 import { introductionData } from "./IntroductionData";
+import { featuredProjectsData } from "./FeaturedProjectsData";
 
 import IntroductionArea from "../components/IntroductionArea";
 const AboutArea = lazy(() => import("../components/AboutArea"));
-const ProjectsArea = lazy(() => import("../components/ProjectsArea"));
+const FeaturedProjectsArea = lazy(
+  () => import("../components/FeaturedProjectsArea")
+);
 
 interface AppSection {
   url: string;
@@ -45,11 +52,12 @@ export const appSections: AppSection[] = [
     divider: true,
   },
   {
-    title: "Projects",
+    title: "Sponsored Projects",
     url: "/projects",
-    iosIcon: flaskOutline,
-    mdIcon: flaskSharp,
-    component: ProjectsArea,
+    iosIcon: starOutline,
+    mdIcon: starSharp,
+    component: FeaturedProjectsArea,
+    props: featuredProjectsData,
     divider: true,
   },
 ];

@@ -31,10 +31,13 @@ const IntroductionArea: React.FC<ContainerProps> = (props) => {
       </h1>
       <h2>{props.subtitle}</h2>
 
-      <p>{props.description}</p>
+      <div className="description">
+        <p>{props.description}</p>
+      </div>
 
       {props.buttons.map((button, index) => (
         <IonButton
+          key={index}
           color={button.color ?? "primary"}
           fill="outline"
           href={button.link ?? "#"}

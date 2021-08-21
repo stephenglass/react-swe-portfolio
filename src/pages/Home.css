@@ -10,6 +10,7 @@
   margin: 1.5em;
 }
 
+/* breakpoint = ionic xl */
 @media only screen and (min-width: 1200px) {
   .page-container {
     margin: auto;

@@ -8,7 +8,7 @@ import {
 
 export const introductionData: IntroductionProps = {
   name: "Stephen Glass.",
-  subtitle: "Software Engineer @ AT&T",
+  subtitle: "Software Engineer at AT&T.",
   description:
     "I build web apps and more using latest technologies. Check out what I've been working on.",
   buttons: [

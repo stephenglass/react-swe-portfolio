@@ -37,12 +37,17 @@ const AboutArea: React.FC<ContainerProps> = ({
           }
         >
           {/* note: size-lg="12" for extra breakpoint if split pane set to "lg" */}
-          <IonCol size="12" size-sm="6" size-xl="7">
+          <IonCol size="12" size-sm="6" size-xl="7" className="ion-no-padding">
             <IonAvatar className="avatar">
               <IonImg src={img} alt="User avatar" />
             </IonAvatar>
           </IonCol>
-          <IonCol size="12" size-sm="6" size-xl="5" className="text">
+          <IonCol
+            size="12"
+            size-sm="6"
+            size-xl="5"
+            className="text ion-no-padding"
+          >
             <div dangerouslySetInnerHTML={{ __html: text }}></div>
             <div className="skills">
               {skills.map((skill, index) => (

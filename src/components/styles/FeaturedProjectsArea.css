@@ -1,0 +1,34 @@
+.projects-container {
+  margin: auto;
+}
+
+.projects-container ion-img,
+img {
+  max-height: 200px;
+  object-fit: contain;
+  overflow: hidden;
+}
+
+.project-card {
+  top: 0;
+  transition: top ease 0.25s;
+  background: #efefef;
+}
+.project-card:hover {
+  top: -10px;
+}
+
+.projects-container .project-card-left {
+  margin-left: 0px !important;
+}
+.projects-container .project-card-right {
+  margin-right: 0px !important;
+}
+
+/* breakpoint = ionic sm */
+@media only screen and (max-width: 576px) {
+  .projects-container .project-card {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+}
