@@ -1,4 +1,4 @@
-import "./SectionDivider.scss";
+import "./styles/SectionDivider.scss";
 
 interface ContainerProps {
   text: string;

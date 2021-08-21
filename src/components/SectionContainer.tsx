@@ -1,7 +1,7 @@
-import "./SectionContainer.css";
 import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
 import { ObserverThreshold } from "../data/AppMeta";
+import "./styles/SectionContainer.css";
 
 interface ContainerProps {
   index: number;

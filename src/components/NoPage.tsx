@@ -1,6 +1,6 @@
 import { IonIcon } from "@ionic/react";
 import { warningOutline, warningSharp } from "ionicons/icons";
-import "./IntroductionArea.css";
+import "./styles/IntroductionArea.css";
 
 const NoPage: React.FC = () => {
   return (

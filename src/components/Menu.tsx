@@ -14,7 +14,7 @@ import { AppContext } from "../AppContext";
 import { appSections } from "../data/AppData";
 import { menuLinks } from "../data/Links";
 import { MenuGestureThreshold } from "../data/AppMeta";
-import "./Menu.css";
+import "./styles/Menu.css";
 
 const Menu: React.FC = () => {
   const { sharedValue, setSharedValue } = useContext(AppContext);
