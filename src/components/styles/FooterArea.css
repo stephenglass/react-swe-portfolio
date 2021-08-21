@@ -1,0 +1,19 @@
+.padding-container {
+  width: 100%;
+  background: rgb(16, 17, 31);
+  background: -moz-linear-gradient(
+    180deg,
+    rgba(16, 17, 31, 1) 25%,
+    rgba(8, 8, 15, 1) 100%
+  );
+  background: -webkit-linear-gradient(
+    180deg,
+    rgba(16, 17, 31, 1) 25%,
+    rgba(8, 8, 15, 1) 100%
+  );
+  background: linear-gradient(
+    180deg,
+    rgba(16, 17, 31, 1) 25%,
+    rgba(8, 8, 15, 1) 100%
+  );
+}

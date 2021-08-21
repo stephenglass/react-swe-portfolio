@@ -21,6 +21,7 @@ import { appSections } from "../data/AppData";
 import { Constants, EventType } from "../data/AppConstants";
 import SectionContainer from "../components/SectionContainer";
 import SectionDivider from "../components/SectionDivider";
+import FooterArea from "../components/FooterArea";
 import NoPage from "../components/NoPage";
 import "./Home.css";
 
@@ -154,6 +155,7 @@ const Home: React.FC = () => {
             </>
           )}
         </div>
+        <FooterArea />
       </IonContent>
     </IonPage>
   );

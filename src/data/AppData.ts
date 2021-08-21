@@ -5,6 +5,8 @@ import {
   homeSharp,
   personOutline,
   personSharp,
+  flaskOutline,
+  flaskSharp,
 } from "ionicons/icons";
 import { lazy } from "react";
 import { aboutData } from "./AboutData";
@@ -12,6 +14,7 @@ import { introductionData } from "./IntroductionData";
 
 import IntroductionArea from "../components/IntroductionArea";
 const AboutArea = lazy(() => import("../components/AboutArea"));
+const ProjectsArea = lazy(() => import("../components/ProjectsArea"));
 
 interface AppSection {
   url: string;
@@ -39,6 +42,14 @@ export const appSections: AppSection[] = [
     mdIcon: personSharp,
     component: AboutArea,
     props: aboutData,
+    divider: true,
+  },
+  {
+    title: "Projects",
+    url: "/projects",
+    iosIcon: flaskOutline,
+    mdIcon: flaskSharp,
+    component: ProjectsArea,
     divider: true,
   },
 ];

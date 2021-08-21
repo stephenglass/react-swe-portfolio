@@ -1,6 +1,5 @@
 .about-container {
   margin: auto;
-  flex-direction: column-reverse;
 }
 
 .about-container .avatar {
