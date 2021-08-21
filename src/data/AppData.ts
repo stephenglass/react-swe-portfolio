@@ -1,16 +1,10 @@
 import {
-  paperPlaneOutline,
-  paperPlaneSharp,
   homeOutline,
   homeSharp,
   personOutline,
   personSharp,
-  flaskOutline,
-  flaskSharp,
   starOutline,
   starSharp,
-  ribbonOutline,
-  ribbonSharp,
 } from "ionicons/icons";
 import { lazy } from "react";
 import { aboutData } from "./AboutData";
@@ -29,6 +23,7 @@ interface AppSection {
   mdIcon: string;
   title: string;
   divider?: boolean;
+  info?: string;
   component: React.FC<any> | React.LazyExoticComponent<React.FC<any>>;
   props?: React.ComponentProps<any>;
 }
@@ -59,5 +54,6 @@ export const appSections: AppSection[] = [
     component: FeaturedProjectsArea,
     props: featuredProjectsData,
     divider: true,
+    info: "Projects paid as consultant or freelancer",
   },
 ];

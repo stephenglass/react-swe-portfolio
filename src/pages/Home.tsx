@@ -146,7 +146,7 @@ const Home: React.FC = () => {
                   addElement={addVisibleElement}
                   removeElement={removeVisibleElement}
                 >
-                  {n.divider && <SectionDivider text={n.title} />}
+                  {n.divider && <SectionDivider text={n.title} info={n.info} />}
                   <Suspense fallback={<h1>Loading…</h1>}>
                     <n.component key={index} {...n.props} />
                   </Suspense>
