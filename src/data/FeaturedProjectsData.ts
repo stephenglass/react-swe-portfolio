@@ -6,12 +6,22 @@ export const featuredProjectsData: FeaturedProjects = {
     {
       title: "Pain Manangement App",
       description: "Foobar",
-      tags: [{ name: "Skill" }],
+      tags: [
+        { name: "TypeScript", color: "danger" },
+        { name: "React", color: "primary" },
+        { name: "Ionic", color: "danger" },
+      ],
     },
     {
       title: "Mortality Tool App",
       description: "Foobar",
-      tags: [{ name: "Skill" }],
+      tags: [
+        { name: "TypeScript", color: "danger" },
+        { name: "React", color: "primary" },
+        { name: "Ionic", color: "danger" },
+        { name: "PHP", color: "secondary" },
+        { name: "PHP", color: "secondary" },
+      ],
     },
   ],
 };

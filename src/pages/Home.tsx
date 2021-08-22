@@ -18,7 +18,7 @@ import {
 import { useParams } from "react-router";
 import { AppContext } from "../AppContext";
 import { appSections } from "../data/AppData";
-import { Constants, EventType } from "../data/AppConstants";
+import { Constants, EventType } from "../data/AppEnums";
 import SectionContainer from "../components/SectionContainer";
 import SectionDivider from "../components/SectionDivider";
 import FooterArea from "../components/FooterArea";

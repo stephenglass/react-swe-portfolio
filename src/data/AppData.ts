@@ -54,6 +54,6 @@ export const appSections: AppSection[] = [
     component: FeaturedProjectsArea,
     props: featuredProjectsData,
     divider: true,
-    info: "Projects paid as consultant or freelancer",
+    info: "Projects created professionally as consultant or freelancer",
   },
 ];

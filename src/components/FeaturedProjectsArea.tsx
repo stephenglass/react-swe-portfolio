@@ -48,6 +48,19 @@ const FeaturedProjectsArea: React.FC<ContainerProps> = (props) => {
     return table;
   };
 
+  const getMarginClass = (index: number, length: number) => {
+    var classList = "project-card-middle";
+    if (index > 0 && index === length - 1) {
+      classList = "project-card-right";
+    } else if (index === 0 && index === length - 1) {
+      classList = "project-card-left project-card-right";
+    } else if (index === 0) {
+      classList = "project-card-left";
+    }
+    console.log("index: ", index, " length: ", length, classList);
+    return classList;
+  };
+
   // calculate layout in memo for efficiency in rerenders
   const projectsTable = useMemo(
     () => tableize(props.projects, props.columns),
@@ -68,166 +81,41 @@ const FeaturedProjectsArea: React.FC<ContainerProps> = (props) => {
                 className="ion-no-padding"
               >
                 <IonCard
-                  className="project-card project-card-left"
-                  href={project.link ?? ""}
+                  className={
+                    "project-card " +
+                    getMarginClass(j, projectsTable[i].length) +
+                    (i > 0 && i === projectsTable.length - 1
+                      ? " bottom"
+                      : " top")
+                  }
                 >
                   <IonImg
                     src={project.img ?? PlaceholderImg}
                     alt="project image"
                   />
                   <IonCardHeader>
-                    {project.tags &&
-                      project.tags.map((tag, k) => (
-                        <IonChip key={k} color={tag.color ?? "primary"}>
-                          {tag.name}
-                        </IonChip>
-                      ))}
+                    <div className="header">
+                      {project.tags &&
+                        project.tags.map((tag, k) => (
+                          <span className="skills">
+                            <IonChip key={k} color={tag.color ?? "primary"}>
+                              {tag.name}
+                            </IonChip>
+                          </span>
+                        ))}
+                    </div>
                     <IonCardTitle>{project.title}</IonCardTitle>
                   </IonCardHeader>
-                  <IonCardContent>{project.description}</IonCardContent>
+
+                  <IonCardContent className="content-container">
+                    {project.description}
+                  </IonCardContent>
                 </IonCard>
               </IonCol>
             ))}
           </IonRow>
         ))}
       </IonGrid>
-      {/* {props.projects.map((project, index) => {
-          <IonCol size="12" size-sm="6" className="ion-no-padding">
-            <IonCard
-              className="project-card project-card-left"
-              href={project.link ?? ""}
-            >
-              <IonImg src={project.img ?? PlaceholderImg} alt="project image" />
-              <IonCardHeader>
-                {project.tags &&
-                  project.tags.map((tag, index) => (
-                    <IonChip color={tag.color ?? "primary"}>{tag.name}</IonChip>
-                  ))}
-                <IonCardTitle>{project.title}</IonCardTitle>
-              </IonCardHeader>
-              <IonCardContent>{project.description}</IonCardContent>
-            </IonCard>
-          </IonCol>;
-        })} */}
-      {/* {props.projects.length > 0 ? (
-            <>
-              {props.projects.map((project, index) => (
-                        <IonRow>
-                  <IonCol size="12" size-sm="6" className="ion-no-padding">
-                    <IonCard
-                      className="project-card project-card-left"
-                      href={project.link ?? ""}
-                    >
-                      <IonImg
-                        src={project.img ?? PlaceholderImg}
-                        alt="project image"
-                      />
-                      <IonCardHeader>
-                        {project.tags &&
-                          project.tags.map((tag, index) => (
-                            <IonChip color={tag.color ?? "primary"}>{tag.name}</IonChip>
-                          ))}
-                        <IonCardTitle>{project.title}</IonCardTitle>
-                      </IonCardHeader>
-                      <IonCardContent>
-                        {project.description}
-                      </IonCardContent>
-                    </IonCard>
-                  </IonCol>
-                  <IonCol size="12" size-sm="6" className="ion-no-padding">
-                    <IonCard
-                      color="light"
-                      className="project-card project-card-right"
-                    >
-                      <IonImg
-                        src="../assets/img/placeholder.jpg"
-                        alt="project image"
-                      />
-                      <IonCardHeader>
-                        <IonChip color="warning">Hello</IonChip>
-                        <IonCardTitle>Another project</IonCardTitle>
-                      </IonCardHeader>
-                      <IonCardContent>
-                        Hello hello hello hello hello hello
-                      </IonCardContent>
-                    </IonCard>
-                  </IonCol>
-                </IonRow>
-              ))}
-            </>
-          ) : null}
-
-          {/* {props.projects.length > 0 ? (
-            <>
-              {props.projects.map((project, index) => (
-                        <IonRow>
-                  <IonCol size="12" size-sm="6" className="ion-no-padding">
-                    <IonCard
-                      className="project-card project-card-left"
-                      href={project.link ?? ""}
-                    >
-                      <IonImg
-                        src={project.img ?? PlaceholderImg}
-                        alt="project image"
-                      />
-                      <IonCardHeader>
-                        {project.tags &&
-                          project.tags.map((tag, index) => (
-                            <IonChip color={tag.color ?? "primary"}>{tag.name}</IonChip>
-                          ))}
-                        <IonCardTitle>{project.title}</IonCardTitle>
-                      </IonCardHeader>
-                      <IonCardContent>
-                        {project.description}
-                      </IonCardContent>
-                    </IonCard>
-                  </IonCol>
-                  <IonCol size="12" size-sm="6" className="ion-no-padding">
-                    <IonCard
-                      color="light"
-                      className="project-card project-card-right"
-                    >
-                      <IonImg
-                        src="../assets/img/placeholder.jpg"
-                        alt="project image"
-                      />
-                      <IonCardHeader>
-                        <IonChip color="warning">Hello</IonChip>
-                        <IonCardTitle>Another project</IonCardTitle>
-                      </IonCardHeader>
-                      <IonCardContent>
-                        Hello hello hello hello hello hello
-                      </IonCardContent>
-                    </IonCard>
-                  </IonCol>
-                </IonRow>
-              ))}
-            </>
-          ) : null} */}
-      {/* <IonCol size="12" size-sm="6" className="ion-no-padding">
-            <IonCard className="project-card project-card-left" href="#">
-              <IonImg src="../assets/img/placeholder.jpg" alt="project image" />
-              <IonCardHeader>
-                <IonChip color="primary">Hello</IonChip>
-                <IonCardTitle>Another project</IonCardTitle>
-              </IonCardHeader>
-              <IonCardContent>
-                Hello hello hello hello hello hello
-              </IonCardContent>
-            </IonCard>
-          </IonCol>
-          <IonCol size="12" size-sm="6" className="ion-no-padding">
-            <IonCard color="light" className="project-card project-card-right">
-              <IonImg src="../assets/img/placeholder.jpg" alt="project image" />
-              <IonCardHeader>
-                <IonChip color="warning">Hello</IonChip>
-                <IonCardTitle>Another project</IonCardTitle>
-              </IonCardHeader>
-              <IonCardContent>
-                Hello hello hello hello hello hello
-              </IonCardContent>
-            </IonCard>
-          </IonCol> */}
     </div>
   );
 };
