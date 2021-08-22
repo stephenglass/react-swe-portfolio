@@ -5,11 +5,14 @@ import {
   personSharp,
   starOutline,
   starSharp,
+  statsChartOutline,
+  statsChartSharp,
 } from "ionicons/icons";
 import { lazy } from "react";
 import { aboutData } from "./AboutData";
 import { introductionData } from "./IntroductionData";
 import { featuredProjectsData } from "./FeaturedProjectsData";
+import { timelineData } from "./TimelineData";
 
 import IntroductionArea from "../components/IntroductionArea";
 const AboutArea = lazy(() => import("../components/AboutArea"));
@@ -58,11 +61,12 @@ export const appSections: AppSection[] = [
     info: "Projects created professionally as consultant or freelancer",
   },
   {
-    title: "Timeline",
-    url: "/timeline",
-    iosIcon: starOutline,
-    mdIcon: starSharp,
+    title: "Experience",
+    url: "/experience",
+    iosIcon: statsChartOutline,
+    mdIcon: statsChartSharp,
     component: TimelineArea,
+    props: timelineData,
     divider: true,
   },
 ];

@@ -1,3 +1,4 @@
+import { FooterPaddingMobile, FooterPaddingNonMobile } from "../data/AppMeta";
 import "./styles/FooterArea.css";
 
 export interface ContainerProps {
@@ -7,13 +8,14 @@ export interface ContainerProps {
 
 const FooterArea: React.FC<ContainerProps> = ({
   widthBreakpoint = 992,
-  padding = "250px",
+  padding = FooterPaddingNonMobile,
 }) => {
   return (
     <div
       className="padding-container"
       style={{
-        height: window.innerWidth >= widthBreakpoint ? padding : "0px",
+        height:
+          window.innerWidth >= widthBreakpoint ? padding : FooterPaddingMobile,
       }}
     ></div>
   );

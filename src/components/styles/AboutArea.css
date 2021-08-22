@@ -14,6 +14,14 @@
   box-shadow: 5px 5px 5px #252736;
   -moz-box-shadow: 5px 5px 5px #252736;
   -webkit-box-shadow: 5px 5px 5px #252736;
+
+  transition: margin-top ease 0.25s;
+}
+
+@media (hover: hover) {
+  .avatar:hover {
+    margin-top: -10px;
+  }
 }
 
 .about-container .text {

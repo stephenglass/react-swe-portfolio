@@ -8,6 +8,7 @@ import {
   IonCardHeader,
   IonCardTitle,
   IonCardContent,
+  IonCardSubtitle,
 } from "@ionic/react";
 import { useMemo } from "react";
 import { PlaceholderImg } from "../data/AppMeta";
@@ -21,6 +22,7 @@ interface FeaturedProjectTags {
 interface FeaturedProjectsObject {
   img?: string;
   title: string;
+  subtitle: string;
   description: string;
   link?: string;
   tags?: FeaturedProjectTags[];
@@ -103,6 +105,9 @@ const FeaturedProjectsArea: React.FC<ContainerProps> = (props) => {
                           </span>
                         ))}
                     </div>
+                    <IonCardSubtitle className="subtitle">
+                      {project.subtitle}
+                    </IonCardSubtitle>
                     <IonCardTitle>{project.title}</IonCardTitle>
                   </IonCardHeader>
 

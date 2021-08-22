@@ -13,7 +13,14 @@ img {
   top: 0;
   transition: top ease 0.25s;
   background: #efefef;
-  height: 375px;
+  max-height: 400px;
+}
+
+/* breakpoint = ionic sm */
+@media only screen and (min-width: 576px) {
+  .projects-container .project-card {
+    height: 400px;
+  }
 }
 
 @media (hover: hover) {
@@ -43,10 +50,10 @@ img {
   }
 }
 
-.projects-container .content-container {
+/* .projects-container .content-container {
   position: absolute;
-  top: 315px;
-}
+  top: 325px;
+} */
 
 .projects-container .header {
   width: 100%;
@@ -61,5 +68,9 @@ img {
 }
 
 .projects-container .skills {
-  margin-left: -5px;
+  margin-left: -2.5px;
+}
+
+.projects-container .subtitle {
+  padding-top: 5px;
 }

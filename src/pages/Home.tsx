@@ -51,7 +51,7 @@ const Home: React.FC = () => {
 
   useEffect(() => {
     if (anchor !== "undefined") {
-      for (var i = 0; i < appSections.length; i++) {
+      for (let i = 0; i < appSections.length; i++) {
         if (appSections[i].url.substr(1) === anchor) {
           scrollTo(EventType.TypeReload, anchor);
           return;

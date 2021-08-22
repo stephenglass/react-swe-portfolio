@@ -5,6 +5,7 @@ export const featuredProjectsData: FeaturedProjects = {
   projects: [
     {
       title: "Pain Manangement App",
+      subtitle: "Rowan University",
       description: "Foobar",
       tags: [
         { name: "TypeScript", color: "danger" },
@@ -15,11 +16,12 @@ export const featuredProjectsData: FeaturedProjects = {
     {
       title: "Mortality Tool App",
       description: "Foobar",
+      subtitle: "Cooper Medical School",
       tags: [
         { name: "TypeScript", color: "danger" },
         { name: "React", color: "primary" },
         { name: "Ionic", color: "danger" },
-        { name: "PHP", color: "secondary" },
+        { name: "Python", color: "warning" },
         { name: "PHP", color: "secondary" },
       ],
     },
