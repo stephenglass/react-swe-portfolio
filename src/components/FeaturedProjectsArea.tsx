@@ -57,7 +57,6 @@ const FeaturedProjectsArea: React.FC<ContainerProps> = (props) => {
     } else if (index === 0) {
       classList = "project-card-left";
     }
-    console.log("index: ", index, " length: ", length, classList);
     return classList;
   };
 

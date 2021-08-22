@@ -16,6 +16,7 @@ const AboutArea = lazy(() => import("../components/AboutArea"));
 const FeaturedProjectsArea = lazy(
   () => import("../components/FeaturedProjectsArea")
 );
+const TimelineArea = lazy(() => import("../components/TimelineArea"));
 
 interface AppSection {
   url: string;
@@ -55,5 +56,13 @@ export const appSections: AppSection[] = [
     props: featuredProjectsData,
     divider: true,
     info: "Projects created professionally as consultant or freelancer",
+  },
+  {
+    title: "Timeline",
+    url: "/timeline",
+    iosIcon: starOutline,
+    mdIcon: starSharp,
+    component: TimelineArea,
+    divider: true,
   },
 ];
