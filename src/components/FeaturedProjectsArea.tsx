@@ -97,7 +97,7 @@ const FeaturedProjectsArea: React.FC<ContainerProps> = (props) => {
                     <div className="header">
                       {project.tags &&
                         project.tags.map((tag, k) => (
-                          <span className="skills">
+                          <span className="skills" key={k}>
                             <IonChip key={k} color={tag.color ?? "primary"}>
                               {tag.name}
                             </IonChip>

@@ -51,6 +51,7 @@ img {
 .projects-container .header {
   width: 100%;
   overflow-x: scroll;
+  white-space: nowrap;
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
@@ -61,5 +62,4 @@ img {
 
 .projects-container .skills {
   margin-left: -5px;
-  white-space: nowrap;
 }
