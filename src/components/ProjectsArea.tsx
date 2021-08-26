@@ -11,9 +11,15 @@ import {
   IonThumbnail,
   IonIcon,
 } from "@ionic/react";
-import { useMemo } from "react";
+import { useMemo, useEffect, useState } from "react";
 import { PlaceholderImg } from "../data/AppMeta";
 import "./styles/ProjectsArea.scss";
+
+interface DynamicTable {
+  minWidth?: number;
+  maxWidth?: number;
+  columns: number;
+}
 
 interface ProjectTags {
   name: string;
@@ -37,10 +43,34 @@ interface ProjectsObject {
 
 export interface ContainerProps {
   columns: number;
+  dynamicColumns: DynamicTable[];
   projects: ProjectsObject[];
 }
 
 const ProjectsArea: React.FC<ContainerProps> = (props) => {
+  const [effectiveColumns, setEffectiveColumns] = useState<number>(
+    props.columns
+  );
+
+  useEffect(() => {
+    console.log(props.dynamicColumns);
+    props.dynamicColumns.forEach((n) => {
+      if (
+        n.minWidth === undefined ||
+        (n.minWidth !== undefined && window.innerWidth >= n.minWidth)
+      ) {
+        if (
+          n.maxWidth === undefined ||
+          (n.maxWidth !== undefined && window.innerWidth <= n.maxWidth)
+        ) {
+          // columns = n.columns;
+          return setEffectiveColumns(n.columns);
+        }
+      }
+    });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [window.innerWidth]);
+
   const tableize = (projects: ProjectsObject[], columns: number) => {
     var row: number = 0;
     var table: any[] = [];
@@ -71,8 +101,8 @@ const ProjectsArea: React.FC<ContainerProps> = (props) => {
 
   // calculate layout in memo for efficiency in rerenders
   const projectsTable = useMemo(
-    () => tableize(props.projects, props.columns),
-    [props.projects, props.columns]
+    () => tableize(props.projects, effectiveColumns),
+    [props.projects, effectiveColumns]
   );
   return (
     <div className="projects-container">
@@ -84,7 +114,9 @@ const ProjectsArea: React.FC<ContainerProps> = (props) => {
                 key={j}
                 size="12"
                 size-sm={
-                  projects.length > 1 ? (12 / props.columns).toString() : "12"
+                  projects.length > 1
+                    ? (12 / effectiveColumns).toString()
+                    : "12"
                 }
                 className="ion-no-padding"
               >

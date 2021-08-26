@@ -80,6 +80,10 @@ export const appSections: AppSection[] = [
     mdIcon: folderSharp,
     component: ProjectsArea,
     props: {
+      dynamicColumns: [
+        { minWidth: 0, maxWidth: 800, columns: 2 },
+        { minWidth: 801, columns: 3 },
+      ],
       columns: 3,
       projects: [
         {
