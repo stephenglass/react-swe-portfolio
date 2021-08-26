@@ -73,10 +73,11 @@ $barsize: 0.1px;
     color: var(--text-color-secondary);
     vertical-align: center;
   }
-  .info-popover {
-    margin: 10px;
-  }
   .info-icon:hover {
     cursor: pointer;
   }
+}
+
+.info-popover {
+  margin: 10px;
 }
