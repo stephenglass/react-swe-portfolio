@@ -80,11 +80,11 @@ export const appSections: AppSection[] = [
     mdIcon: folderSharp,
     component: ProjectsArea,
     props: {
-      dynamicColumns: [
-        { minWidth: 0, maxWidth: 800, columns: 2 },
-        { minWidth: 801, columns: 3 },
+      layout: [
+        { columns: 2 }, // fallback column size
+        { minWidth: 576, columns: 2 },
+        { minWidth: 768, columns: 3 },
       ],
-      columns: 3,
       projects: [
         {
           title: "Resistor Calculator",

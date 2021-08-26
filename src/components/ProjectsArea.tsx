@@ -15,9 +15,8 @@ import { useMemo, useEffect, useState } from "react";
 import { PlaceholderImg } from "../data/AppMeta";
 import "./styles/ProjectsArea.scss";
 
-interface DynamicTable {
+interface DynamicLayout {
   minWidth?: number;
-  maxWidth?: number;
   columns: number;
 }
 
@@ -42,31 +41,31 @@ interface ProjectsObject {
 }
 
 export interface ContainerProps {
-  columns: number;
-  dynamicColumns: DynamicTable[];
+  layout: DynamicLayout[];
   projects: ProjectsObject[];
 }
 
 const ProjectsArea: React.FC<ContainerProps> = (props) => {
   const [effectiveColumns, setEffectiveColumns] = useState<number>(
-    props.columns
+    props.layout[0].columns
   );
 
   useEffect(() => {
-    console.log(props.dynamicColumns);
-    props.dynamicColumns.forEach((n) => {
+    // sort layout breakpoints by descending order
+    props.layout
+      .sort((a, b) => {
+        return (a.minWidth ?? 0) - (b.minWidth ?? 0);
+      })
+      .reverse();
+    props.layout.find((n) => {
       if (
         n.minWidth === undefined ||
         (n.minWidth !== undefined && window.innerWidth >= n.minWidth)
       ) {
-        if (
-          n.maxWidth === undefined ||
-          (n.maxWidth !== undefined && window.innerWidth <= n.maxWidth)
-        ) {
-          // columns = n.columns;
-          return setEffectiveColumns(n.columns);
-        }
+        setEffectiveColumns(n.columns);
+        return true;
       }
+      return false;
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [window.innerWidth]);
