@@ -46,18 +46,23 @@ export interface ContainerProps {
 }
 
 const ProjectsArea: React.FC<ContainerProps> = (props) => {
+  // sort layout breakpoints by descending order
+  const layout = useMemo(
+    () =>
+      [...props.layout]
+        .sort((a, b) => {
+          return (a.minWidth ?? 0) - (b.minWidth ?? 0);
+        })
+        .reverse(),
+    [props.layout]
+  );
+  // set default columns to minimum most breakpoint which is last element in array after sorted
   const [effectiveColumns, setEffectiveColumns] = useState<number>(
-    props.layout[0].columns
+    layout[layout.length - 1].columns
   );
 
   useEffect(() => {
-    // sort layout breakpoints by descending order
-    props.layout
-      .sort((a, b) => {
-        return (a.minWidth ?? 0) - (b.minWidth ?? 0);
-      })
-      .reverse();
-    props.layout.find((n) => {
+    layout.find((n) => {
       if (
         n.minWidth === undefined ||
         (n.minWidth !== undefined && window.innerWidth >= n.minWidth)
@@ -68,7 +73,7 @@ const ProjectsArea: React.FC<ContainerProps> = (props) => {
       return false;
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [window.innerWidth]);
+  }, [layout, window.innerWidth]);
 
   const tableize = (projects: ProjectsObject[], columns: number) => {
     var row: number = 0;
