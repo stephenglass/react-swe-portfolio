@@ -1,8 +1,9 @@
 import { IonApp, IonRouterOutlet, IonSplitPane } from "@ionic/react";
 import { IonReactRouter } from "@ionic/react-router";
-import { Route } from "react-router-dom";
+import { Route, Redirect } from "react-router-dom";
 import Menu from "./components/Menu";
 import Home from "./pages/Home";
+import NoPage from "./pages/NoPage";
 
 /* Core CSS required for Ionic components to work properly */
 import "@ionic/react/css/core.css";
@@ -38,6 +39,10 @@ const App: React.FC = () => {
               <Route path="/:anchor?" exact={true}>
                 <Home />
               </Route>
+              <Route path="/404" exact={true}>
+                <NoPage />
+              </Route>
+              <Redirect to="/404" />
             </IonRouterOutlet>
           </IonSplitPane>
         </IonReactRouter>

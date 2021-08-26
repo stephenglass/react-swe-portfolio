@@ -16,16 +16,17 @@ import {
   Suspense,
 } from "react";
 import { useParams } from "react-router";
+import { useHistory } from "react-router-dom";
 import { AppContext } from "../AppContext";
 import { appSections } from "../data/AppData";
 import { Constants, EventType } from "../data/AppEnums";
 import SectionContainer from "../components/SectionContainer";
 import SectionDivider from "../components/SectionDivider";
 import FooterArea from "../components/FooterArea";
-import NoPage from "../components/NoPage";
 import "./Home.scss";
 
 const Home: React.FC = () => {
+  const history = useHistory();
   const isDomRendered = useRef(false);
   const { anchor = "undefined" } = useParams<{ anchor: string }>();
   const [visibleElements, setVisibleElements] = useState<number[]>([]);
@@ -58,12 +59,9 @@ const Home: React.FC = () => {
         }
       }
       // return not met, no anchor point matched. 404
-      setSharedValue({
-        ...sharedValue,
-        pageNotFound: true,
-        lastViewedElement: "Error Page",
-      });
       console.log("404?");
+      history.replace("/404");
+      window.location.reload();
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [anchor]);
@@ -134,26 +132,20 @@ const Home: React.FC = () => {
 
       <IonContent className="main-page" fullscreen>
         <div className="page-container">
-          {sharedValue.pageNotFound ? (
-            <NoPage />
-          ) : (
-            <>
-              {appSections.map((n, index) => (
-                <SectionContainer
-                  key={index}
-                  index={index}
-                  name={n.url.substr(1)}
-                  addElement={addVisibleElement}
-                  removeElement={removeVisibleElement}
-                >
-                  {n.divider && <SectionDivider text={n.title} info={n.info} />}
-                  <Suspense fallback={<h1>Loading…</h1>}>
-                    <n.component key={index} {...n.props} />
-                  </Suspense>
-                </SectionContainer>
-              ))}
-            </>
-          )}
+          {appSections.map((n, index) => (
+            <SectionContainer
+              key={index}
+              index={index}
+              name={n.url.substr(1)}
+              addElement={addVisibleElement}
+              removeElement={removeVisibleElement}
+            >
+              {n.divider && <SectionDivider text={n.title} info={n.info} />}
+              <Suspense fallback={<h1>Loading…</h1>}>
+                <n.component key={index} {...n.props} />
+              </Suspense>
+            </SectionContainer>
+          ))}
         </div>
         <FooterArea />
       </IonContent>

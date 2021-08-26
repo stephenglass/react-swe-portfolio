@@ -13,7 +13,7 @@ import { useContext } from "react";
 import { AppContext } from "../AppContext";
 import { appSections } from "../data/AppData";
 import { menuLinks } from "../data/Links";
-import { MenuGestureThreshold } from "../data/AppMeta";
+import { MenuGestureThreshold, SideMenuDisabled } from "../data/AppMeta";
 import "./styles/Menu.scss";
 
 const Menu: React.FC = () => {
@@ -24,7 +24,7 @@ const Menu: React.FC = () => {
       contentId="main"
       maxEdgeStart={MenuGestureThreshold}
       type="overlay"
-      disabled={sharedValue.pageNotFound}
+      disabled={sharedValue.pageNotFound || SideMenuDisabled}
     >
       <IonContent>
         <IonList id="nav-list">
