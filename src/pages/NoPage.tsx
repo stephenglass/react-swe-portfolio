@@ -8,22 +8,11 @@ import {
   IonMenuButton,
   IonTitle,
 } from "@ionic/react";
-import { useEffect, useContext } from "react";
-import { AppContext } from "../AppContext";
 import { warningOutline, warningSharp } from "ionicons/icons";
 import "./Home.scss";
 import "../components/styles/IntroductionArea.scss";
 
 const NoPage: React.FC = () => {
-  const { sharedValue, setSharedValue } = useContext(AppContext);
-
-  useEffect(() => {
-    setSharedValue({
-      ...sharedValue,
-      pageNotFound: true,
-    });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
   return (
     <IonPage>
       <IonHeader>

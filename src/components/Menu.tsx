@@ -10,6 +10,7 @@ import {
 } from "@ionic/react";
 
 import { useContext } from "react";
+import { useLocation } from "react-router-dom";
 import { AppContext } from "../AppContext";
 import { appSections } from "../data/AppData";
 import { menuLinks } from "../data/Links";
@@ -17,6 +18,7 @@ import { MenuGestureThreshold, SideMenuDisabled } from "../data/AppMeta";
 import "./styles/Menu.scss";
 
 const Menu: React.FC = () => {
+  const location = useLocation();
   const { sharedValue, setSharedValue } = useContext(AppContext);
 
   return (
@@ -24,7 +26,7 @@ const Menu: React.FC = () => {
       contentId="main"
       maxEdgeStart={MenuGestureThreshold}
       type="overlay"
-      disabled={sharedValue.pageNotFound || SideMenuDisabled}
+      disabled={location.pathname === "/404" || SideMenuDisabled}
     >
       <IonContent>
         <IonList id="nav-list">
