@@ -1,5 +1,5 @@
 import { IonButton, IonIcon } from "@ionic/react";
-import "./styles/IntroductionArea.css";
+import "./styles/IntroductionArea.scss";
 
 export interface IntroductionButtons {
   text: string;

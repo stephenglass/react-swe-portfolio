@@ -12,7 +12,7 @@ import {
 } from "@ionic/react";
 import { useMemo } from "react";
 import { PlaceholderImg } from "../data/AppMeta";
-import "./styles/FeaturedProjectsArea.css";
+import "./styles/FeaturedProjectsArea.scss";
 
 interface FeaturedProjectTags {
   name: string;

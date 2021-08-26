@@ -14,7 +14,7 @@ import { AppContext } from "../AppContext";
 import { appSections } from "../data/AppData";
 import { menuLinks } from "../data/Links";
 import { MenuGestureThreshold } from "../data/AppMeta";
-import "./styles/Menu.css";
+import "./styles/Menu.scss";
 
 const Menu: React.FC = () => {
   const { sharedValue, setSharedValue } = useContext(AppContext);
@@ -27,7 +27,7 @@ const Menu: React.FC = () => {
       disabled={sharedValue.pageNotFound}
     >
       <IonContent>
-        <IonList id="inbox-list">
+        <IonList id="nav-list">
           <IonListHeader>Navigation</IonListHeader>
           {appSections.map((appSection, index) => {
             return (
@@ -60,7 +60,7 @@ const Menu: React.FC = () => {
           })}
         </IonList>
 
-        <IonList id="labels-list">
+        <IonList id="links-list">
           <IonListHeader>Links</IonListHeader>
           {menuLinks.map((link, index) => (
             <IonItem lines="none" key={index} href={link.url}>

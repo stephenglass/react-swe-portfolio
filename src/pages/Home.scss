@@ -1,5 +1,7 @@
+@import "../theme/globals.scss";
+
 .main-page {
-  --ion-background-color: #10111f;
+  --ion-background-color: var(--main-page-color);
 }
 
 .spacing {
@@ -11,10 +13,10 @@
 }
 
 /* breakpoint = ionic xl */
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: $breakpoint-xl) {
   .page-container {
     margin: auto;
-    width: 60%;
+    width: var(--xl-container-width);
   }
 
   .spacing {

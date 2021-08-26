@@ -6,7 +6,7 @@ import {
   IonRow,
   IonChip,
 } from "@ionic/react";
-import "./styles/AboutArea.css";
+import "./styles/AboutArea.scss";
 
 export interface AboutSkills {
   text: string;

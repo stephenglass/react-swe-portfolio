@@ -1,0 +1,24 @@
+$breakpoint-xl: 1200px;
+$breakpoint-lg: 992px;
+$breakpoint-md: 768px;
+$breakpoint-sm: 576px;
+
+.split-pane {
+  --side-width: 5%;
+}
+
+:root {
+  // colors
+
+  --main-page-color: #10111f;
+  --side-menu-color: #efefef;
+  --cards-color: #efefef;
+
+  // text colors
+  --text-color-primary: #bcc2d1;
+  --text-color-secondary: #c5cce0;
+  --text-color-highlight: #4c8dff;
+
+  // container sizes
+  --xl-container-width: 60%;
+}

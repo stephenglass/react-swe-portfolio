@@ -23,7 +23,7 @@ import SectionContainer from "../components/SectionContainer";
 import SectionDivider from "../components/SectionDivider";
 import FooterArea from "../components/FooterArea";
 import NoPage from "../components/NoPage";
-import "./Home.css";
+import "./Home.scss";
 
 const Home: React.FC = () => {
   const isDomRendered = useRef(false);

@@ -1,7 +1,6 @@
 import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
 import { ObserverThreshold } from "../data/AppMeta";
-import "./styles/SectionContainer.css";
 
 interface ContainerProps {
   index: number;
@@ -34,7 +33,7 @@ const SectionContainer: React.FC<ContainerProps> = ({
   }, [inView]);
 
   return (
-    <div ref={ref} className="section-container">
+    <div ref={ref}>
       <div id={"anchor_" + name} className="anchor"></div>
       {children}
     </div>

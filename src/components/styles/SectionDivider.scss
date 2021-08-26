@@ -65,18 +65,18 @@ $barsize: 0.1px;
   }
 }
 
-.divider h1,
-h2 {
-  line-height: 1;
-  margin-bottom: -0.5em;
-  color: #c5cce0;
-  vertical-align: center;
-}
-
-.info-popover {
-  margin: 10px;
-}
-
-.divider .info-icon:hover {
-  cursor: pointer;
+.divider {
+  h1,
+  h2 {
+    line-height: 1;
+    margin-bottom: -0.5em;
+    color: var(--text-color-secondary);
+    vertical-align: center;
+  }
+  .info-popover {
+    margin: 10px;
+  }
+  .info-icon:hover {
+    cursor: pointer;
+  }
 }

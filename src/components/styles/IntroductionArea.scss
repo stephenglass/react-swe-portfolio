@@ -1,0 +1,33 @@
+@import "../../theme/globals.scss";
+
+.introduction-container {
+  h1 {
+    font-size: 72px;
+    color: var(--text-color-secondary);
+  }
+
+  h2 {
+    font-size: 20px;
+    color: var(--text-color-primary);
+    margin-top: -5px;
+    padding-bottom: 15px;
+  }
+
+  h3 {
+    letter-spacing: 2.5px;
+    font-size: 18px;
+    color: var(--text-color-highlight);
+  }
+
+  p {
+    font-size: 16px;
+    line-height: 22px;
+    color: var(--text-color-primary);
+  }
+
+  @media only screen and (min-width: $breakpoint-sm) {
+    .description {
+      width: 50%;
+    }
+  }
+}

@@ -1,0 +1,80 @@
+@import "../../theme/globals.scss";
+
+.projects-container {
+  margin: auto;
+
+  ion-img,
+  img {
+    max-height: 200px;
+    object-fit: contain;
+    overflow: hidden;
+  }
+
+  .project-card {
+    top: 0;
+    transition: top ease 0.25s;
+    background: var(--cards-color);
+    max-height: 400px;
+  }
+
+  /* breakpoint = ionic sm */
+  @media only screen and (min-width: $breakpoint-sm) {
+    .project-card {
+      height: 400px;
+    }
+  }
+
+  @media (hover: hover) {
+    .top:hover {
+      top: -10px;
+    }
+    .bottom:hover {
+      top: 10px;
+    }
+  }
+
+  .project-card-left {
+    margin-left: 0px;
+  }
+
+  .project-card-right {
+    margin-right: 0px;
+  }
+
+  .project-card-middle {
+    padding-top: 5px;
+  }
+
+  /* breakpoint = ionic sm */
+  @media only screen and (max-width: $breakpoint-sm) {
+    .project-card {
+      margin-left: 0px;
+      margin-right: 0px;
+    }
+  }
+
+  /* .content-container {
+  position: absolute;
+  top: 325px;
+} */
+
+  .header {
+    width: 100%;
+    overflow-x: scroll;
+    white-space: nowrap;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .header::-webkit-scrollbar {
+    display: none;
+  }
+
+  .skills {
+    margin-left: -2.5px;
+  }
+
+  .subtitle {
+    padding-top: 5px;
+  }
+}

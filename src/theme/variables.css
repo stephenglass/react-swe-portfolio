@@ -1,15 +1,6 @@
 /* Ionic Variables and Theming. For more info, please see:
 http://ionicframework.com/docs/theming/ */
 
-/* @font-face {
-  font-family: AppFont;
-  src: url(".../assets/fonts/Oxygen-Regular.ttf");
-} */
-
-.split-pane {
-  --side-width: 5%;
-}
-
 /** Ionic CSS Variables **/
 :root {
   --ion-toolbar-background: #efefef;
