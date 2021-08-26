@@ -8,33 +8,40 @@ import {
   IonCardHeader,
   IonCardTitle,
   IonCardContent,
-  IonCardSubtitle,
+  IonThumbnail,
+  IonIcon,
 } from "@ionic/react";
 import { useMemo } from "react";
 import { PlaceholderImg } from "../data/AppMeta";
-import "./styles/FeaturedProjectsArea.scss";
+import "./styles/ProjectsArea.scss";
 
-interface FeaturedProjectTags {
+interface ProjectTags {
   name: string;
   color?: string;
 }
 
-interface FeaturedProjectsObject {
+interface ProjectLinks {
+  iosIcon: string;
+  mdIcon: string;
+  link: string;
+}
+
+interface ProjectsObject {
   img?: string;
   title: string;
-  subtitle: string;
+  links?: ProjectLinks[];
   description: string;
   link?: string;
-  tags?: FeaturedProjectTags[];
+  tags?: ProjectTags[];
 }
 
 export interface ContainerProps {
   columns: number;
-  projects: FeaturedProjectsObject[];
+  projects: ProjectsObject[];
 }
 
-const FeaturedProjectsArea: React.FC<ContainerProps> = (props) => {
-  const tableize = (projects: FeaturedProjectsObject[], columns: number) => {
+const ProjectsArea: React.FC<ContainerProps> = (props) => {
+  const tableize = (projects: ProjectsObject[], columns: number) => {
     var row: number = 0;
     var table: any[] = [];
     projects.forEach((project, index) => {
@@ -68,11 +75,11 @@ const FeaturedProjectsArea: React.FC<ContainerProps> = (props) => {
     [props.projects, props.columns]
   );
   return (
-    <div className="featured-projects-container">
+    <div className="projects-container">
       <IonGrid>
         {projectsTable.map((projects, i) => (
           <IonRow key={i}>
-            {projects.map((project: FeaturedProjectsObject, j: number) => (
+            {projects.map((project: ProjectsObject, j: number) => (
               <IonCol
                 key={j}
                 size="12"
@@ -90,11 +97,7 @@ const FeaturedProjectsArea: React.FC<ContainerProps> = (props) => {
                       : " top")
                   }
                 >
-                  <IonImg
-                    src={project.img ?? PlaceholderImg}
-                    alt="project image"
-                  />
-                  <IonCardHeader>
+                  <IonCardHeader className="card-header">
                     <div className="header">
                       {project.tags &&
                         project.tags.map((tag, k) => (
@@ -105,14 +108,39 @@ const FeaturedProjectsArea: React.FC<ContainerProps> = (props) => {
                           </span>
                         ))}
                     </div>
-                    <IonCardSubtitle className="subtitle">
-                      {project.subtitle}
-                    </IonCardSubtitle>
-                    <IonCardTitle>{project.title}</IonCardTitle>
+                    <IonGrid className="ion-no-padding ion-padding-top">
+                      <IonRow>
+                        <IonCol
+                          size="8"
+                          className="ion-no-padding ion-padding-end"
+                        >
+                          <IonCardTitle>{project.title}</IonCardTitle>
+                        </IonCol>
+                        <IonCol size="4">
+                          <IonThumbnail>
+                            <IonImg
+                              className={
+                                projects.length === 1 ? "img-extended" : ""
+                              }
+                              src={project.img ?? PlaceholderImg}
+                              alt="project image"
+                            />
+                          </IonThumbnail>
+                        </IonCol>
+                      </IonRow>
+                    </IonGrid>
                   </IonCardHeader>
 
                   <IonCardContent className="content-container">
                     {project.description}
+                    <div className="links">
+                      {project.links &&
+                        project.links.map((link: ProjectLinks, k: number) => (
+                          <a key={k} href={link.link}>
+                            <IonIcon ios={link.iosIcon} md={link.mdIcon} />
+                          </a>
+                        ))}
+                    </div>
                   </IonCardContent>
                 </IonCard>
               </IonCol>
@@ -124,4 +152,4 @@ const FeaturedProjectsArea: React.FC<ContainerProps> = (props) => {
   );
 };
 
-export default FeaturedProjectsArea;
+export default ProjectsArea;

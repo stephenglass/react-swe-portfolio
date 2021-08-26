@@ -1,35 +1,46 @@
 @import "../../theme/globals.scss";
 
-.featured-projects-container {
+.projects-container {
   margin: auto;
+
+  ion-row {
+    min-height: 75px;
+  }
 
   ion-img,
   img {
-    max-height: 200px;
-    object-fit: contain;
     overflow: hidden;
+    height: 75px;
+    width: 75px;
+    margin-left: -5px;
+    padding: 0px 0px 0px 0px;
+  }
+
+  @media only screen and (min-width: $breakpoint-md) {
+    .img-extended {
+      width: 200px;
+    }
   }
 
   .project-card {
     top: 0;
     transition: top ease 0.25s;
     background: var(--cards-color);
-    max-height: 400px;
   }
 
   /* breakpoint = ionic sm */
   @media only screen and (min-width: $breakpoint-sm) {
     .project-card {
-      height: 400px;
+      height: 210px;
     }
   }
 
   @media (hover: hover) {
     .top:hover {
-      top: -10px;
+      top: -5px;
     }
     .bottom:hover {
-      top: 10px;
+      top: 5px;
     }
   }
 
@@ -41,9 +52,9 @@
     margin-right: 0px;
   }
 
-  .project-card-middle {
-    padding-top: 5px;
-  }
+  // .project-card-middle {
+  //   padding-top: 5px;
+  // }
 
   /* breakpoint = ionic sm */
   @media only screen and (max-width: $breakpoint-sm) {
@@ -52,11 +63,6 @@
       margin-right: 0px;
     }
   }
-
-  /* .content-container {
-  position: absolute;
-  top: 325px;
-} */
 
   .header {
     width: 100%;
@@ -74,7 +80,17 @@
     margin-left: -2.5px;
   }
 
-  .subtitle {
-    padding-top: 5px;
+  .links {
+    padding-top: 2.5px;
+  }
+
+  .links a {
+    font-size: 26px;
+    color: #757575;
+    padding-right: 10px;
+  }
+
+  .card-header {
+    padding-bottom: 0;
   }
 }

@@ -7,6 +7,9 @@ import {
   starSharp,
   statsChartOutline,
   statsChartSharp,
+  folderOutline,
+  folderSharp,
+  logoGithub,
 } from "ionicons/icons";
 import { lazy } from "react";
 import { aboutData } from "./AboutData";
@@ -19,6 +22,7 @@ const AboutArea = lazy(() => import("../components/AboutArea"));
 const FeaturedProjectsArea = lazy(
   () => import("../components/FeaturedProjectsArea")
 );
+const ProjectsArea = lazy(() => import("../components/ProjectsArea"));
 const TimelineArea = lazy(() => import("../components/TimelineArea"));
 
 interface AppSection {
@@ -52,7 +56,7 @@ export const appSections: AppSection[] = [
   },
   {
     title: "Sponsored Projects",
-    url: "/projects",
+    url: "/consulting",
     iosIcon: starOutline,
     mdIcon: starSharp,
     component: FeaturedProjectsArea,
@@ -67,6 +71,92 @@ export const appSections: AppSection[] = [
     mdIcon: statsChartSharp,
     component: TimelineArea,
     props: timelineData,
+    divider: true,
+  },
+  {
+    title: "Projects",
+    url: "/projects",
+    iosIcon: folderOutline,
+    mdIcon: folderSharp,
+    component: ProjectsArea,
+    props: {
+      columns: 3,
+      projects: [
+        {
+          title: "Resistor Calculator",
+          description: "Foobar",
+          tags: [
+            { name: "TypeScript", color: "danger" },
+            { name: "React", color: "primary" },
+            { name: "Ionic", color: "danger" },
+          ],
+          links: [
+            { link: "#", iosIcon: logoGithub, mdIcon: logoGithub },
+            { link: "#", iosIcon: folderOutline, mdIcon: folderSharp },
+          ],
+        },
+        {
+          title: "Software Portfolio",
+          description: "Foobar",
+          tags: [
+            { name: "TypeScript", color: "danger" },
+            { name: "React", color: "primary" },
+            { name: "Ionic", color: "danger" },
+            { name: "Python", color: "warning" },
+            { name: "PHP", color: "secondary" },
+          ],
+          links: [{ link: "#", iosIcon: logoGithub, mdIcon: logoGithub }],
+        },
+        {
+          title: "MSP430 Asteroids",
+          description: "Foobar",
+          tags: [
+            { name: "TypeScript", color: "danger" },
+            { name: "React", color: "primary" },
+            { name: "Ionic", color: "danger" },
+            { name: "Python", color: "warning" },
+            { name: "PHP", color: "secondary" },
+          ],
+          links: [{ link: "#", iosIcon: logoGithub, mdIcon: logoGithub }],
+        },
+        {
+          title: "ESP8266 Line Sensor",
+          description: "Foobar",
+          tags: [
+            { name: "TypeScript", color: "danger" },
+            { name: "React", color: "primary" },
+            { name: "Ionic", color: "danger" },
+            { name: "Python", color: "warning" },
+            { name: "PHP", color: "secondary" },
+          ],
+          links: [{ link: "#", iosIcon: logoGithub, mdIcon: logoGithub }],
+        },
+        {
+          title: "UART RGB LEDs",
+          description: "Foobar",
+          tags: [
+            { name: "TypeScript", color: "danger" },
+            { name: "React", color: "primary" },
+            { name: "Ionic", color: "danger" },
+            { name: "Python", color: "warning" },
+            { name: "PHP", color: "secondary" },
+          ],
+          links: [{ link: "#", iosIcon: logoGithub, mdIcon: logoGithub }],
+        },
+        {
+          title: "Audio Equalizer",
+          description: "Foobar",
+          tags: [
+            { name: "TypeScript", color: "danger" },
+            { name: "React", color: "primary" },
+            { name: "Ionic", color: "danger" },
+            { name: "Python", color: "warning" },
+            { name: "PHP", color: "secondary" },
+          ],
+          links: [{ link: "#", iosIcon: logoGithub, mdIcon: logoGithub }],
+        },
+      ],
+    },
     divider: true,
   },
 ];
