@@ -20,6 +20,7 @@ import {
   logoNodejs,
   logoDocker,
 } from "ionicons/icons";
+import { customIcons } from "./AppMeta";
 import React, { lazy } from "react";
 
 import IntroductionArea from "../components/introduction-area/IntroductionArea";
@@ -84,6 +85,7 @@ This led to web development exploration using the <a href="#">LAMP</a> stack. My
           {
             text: "TypeScript",
             color: "danger",
+            icon: customIcons.logoTypeScript,
           },
           {
             text: "React",
@@ -98,6 +100,7 @@ This led to web development exploration using the <a href="#">LAMP</a> stack. My
           {
             text: "Express",
             color: "tertiary",
+            icon: customIcons.logoExpress,
           },
           {
             text: "Node.js",
@@ -112,10 +115,12 @@ This led to web development exploration using the <a href="#">LAMP</a> stack. My
           {
             text: "PHP",
             color: "secondary",
+            icon: customIcons.logoPhp,
           },
           {
             text: "Ionic",
             color: "warning",
+            icon: customIcons.logoIonic,
           },
           {
             text: "Docker",
@@ -125,6 +130,7 @@ This led to web development exploration using the <a href="#">LAMP</a> stack. My
           {
             text: "SQL",
             color: "tertiary",
+            icon: customIcons.logoMysql,
           },
         ],
         reverse: true,
@@ -146,9 +152,13 @@ This led to web development exploration using the <a href="#">LAMP</a> stack. My
             subtitle: "Rowan University",
             description: "Foobar",
             tags: [
-              { name: "TypeScript", color: "danger" },
-              { name: "React", color: "primary" },
-              { name: "Ionic", color: "danger" },
+              {
+                name: "TypeScript",
+                color: "danger",
+                icon: customIcons.logoTypeScript,
+              },
+              { name: "React", color: "primary", icon: logoReact },
+              { name: "Ionic", color: "danger", icon: customIcons.logoIonic },
             ],
           },
           {
@@ -156,11 +166,15 @@ This led to web development exploration using the <a href="#">LAMP</a> stack. My
             description: "Foobar",
             subtitle: "Cooper Medical School",
             tags: [
-              { name: "TypeScript", color: "danger" },
-              { name: "React", color: "primary" },
-              { name: "Ionic", color: "danger" },
-              { name: "Python", color: "warning" },
-              { name: "PHP", color: "secondary" },
+              {
+                name: "TypeScript",
+                color: "danger",
+                icon: customIcons.logoTypeScript,
+              },
+              { name: "React", color: "primary", icon: logoReact },
+              { name: "Ionic", color: "danger", icon: customIcons.logoIonic },
+              { name: "Python", color: "warning", icon: logoPython },
+              { name: "PHP", color: "secondary", icon: customIcons.logoPhp },
             ],
           },
         ],
@@ -213,9 +227,13 @@ This led to web development exploration using the <a href="#">LAMP</a> stack. My
             title: "Resistor Calculator",
             description: "Foobar",
             tags: [
-              { name: "TypeScript", color: "danger" },
-              { name: "React", color: "primary" },
-              { name: "Ionic", color: "danger" },
+              {
+                name: "TypeScript",
+                color: "danger",
+                icon: customIcons.logoTypeScript,
+              },
+              { name: "React", color: "primary", icon: logoReact },
+              { name: "Ionic", color: "danger", icon: customIcons.logoIonic },
             ],
             links: [
               { link: "#", iosIcon: logoGithub, mdIcon: logoGithub },
@@ -226,11 +244,13 @@ This led to web development exploration using the <a href="#">LAMP</a> stack. My
             title: "Software Portfolio",
             description: "Foobar",
             tags: [
-              { name: "TypeScript", color: "danger" },
-              { name: "React", color: "primary" },
-              { name: "Ionic", color: "danger" },
-              { name: "Python", color: "warning" },
-              { name: "PHP", color: "secondary" },
+              {
+                name: "TypeScript",
+                color: "danger",
+                icon: customIcons.logoTypeScript,
+              },
+              { name: "React", color: "primary", icon: logoReact },
+              { name: "Ionic", color: "danger", icon: customIcons.logoIonic },
             ],
             links: [{ link: "#", iosIcon: logoGithub, mdIcon: logoGithub }],
           },
@@ -238,11 +258,13 @@ This led to web development exploration using the <a href="#">LAMP</a> stack. My
             title: "MSP430 Asteroids",
             description: "Foobar",
             tags: [
-              { name: "TypeScript", color: "danger" },
-              { name: "React", color: "primary" },
-              { name: "Ionic", color: "danger" },
-              { name: "Python", color: "warning" },
-              { name: "PHP", color: "secondary" },
+              {
+                name: "TypeScript",
+                color: "danger",
+                icon: customIcons.logoTypeScript,
+              },
+              { name: "React", color: "primary", icon: logoReact },
+              { name: "Ionic", color: "danger", icon: customIcons.logoIonic },
             ],
             links: [{ link: "#", iosIcon: logoGithub, mdIcon: logoGithub }],
           },
@@ -250,11 +272,13 @@ This led to web development exploration using the <a href="#">LAMP</a> stack. My
             title: "ESP8266 Line Sensor",
             description: "Foobar",
             tags: [
-              { name: "TypeScript", color: "danger" },
-              { name: "React", color: "primary" },
-              { name: "Ionic", color: "danger" },
-              { name: "Python", color: "warning" },
-              { name: "PHP", color: "secondary" },
+              {
+                name: "TypeScript",
+                color: "danger",
+                icon: customIcons.logoTypeScript,
+              },
+              { name: "React", color: "primary", icon: logoReact },
+              { name: "Ionic", color: "danger", icon: customIcons.logoIonic },
             ],
             links: [{ link: "#", iosIcon: logoGithub, mdIcon: logoGithub }],
           },
@@ -262,11 +286,13 @@ This led to web development exploration using the <a href="#">LAMP</a> stack. My
             title: "Socket.Io Game",
             description: "Foobar",
             tags: [
-              { name: "TypeScript", color: "danger" },
-              { name: "React", color: "primary" },
-              { name: "Ionic", color: "danger" },
-              { name: "Python", color: "warning" },
-              { name: "PHP", color: "secondary" },
+              {
+                name: "TypeScript",
+                color: "danger",
+                icon: customIcons.logoTypeScript,
+              },
+              { name: "React", color: "primary", icon: logoReact },
+              { name: "Ionic", color: "danger", icon: customIcons.logoIonic },
             ],
             links: [{ link: "#", iosIcon: logoGithub, mdIcon: logoGithub }],
           },
@@ -274,11 +300,13 @@ This led to web development exploration using the <a href="#">LAMP</a> stack. My
             title: "Audio Equalizer",
             description: "Foobar",
             tags: [
-              { name: "TypeScript", color: "danger" },
-              { name: "React", color: "primary" },
-              { name: "Ionic", color: "danger" },
-              { name: "Python", color: "warning" },
-              { name: "PHP", color: "secondary" },
+              {
+                name: "TypeScript",
+                color: "danger",
+                icon: customIcons.logoTypeScript,
+              },
+              { name: "React", color: "primary", icon: logoReact },
+              { name: "Ionic", color: "danger", icon: customIcons.logoIonic },
             ],
             links: [{ link: "#", iosIcon: logoGithub, mdIcon: logoGithub }],
           },

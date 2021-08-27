@@ -9,6 +9,7 @@ import {
   IonCardTitle,
   IonCardContent,
   IonCardSubtitle,
+  IonIcon,
 } from "@ionic/react";
 import { useMemo } from "react";
 import { PlaceholderImg } from "../../data/AppMeta";
@@ -17,6 +18,7 @@ import "./FeaturedProjectsArea.scss";
 interface FeaturedProjectTags {
   name: string;
   color?: string;
+  icon?: string;
 }
 
 interface FeaturedProjectsObject {
@@ -100,6 +102,9 @@ const FeaturedProjectsArea: React.FC<ContainerProps> = (props) => {
                         project.tags.map((tag, k) => (
                           <span className="skills" key={k}>
                             <IonChip key={k} color={tag.color ?? "primary"}>
+                              {tag.icon && (
+                                <IonIcon className="icon" icon={tag.icon} />
+                              )}
                               {tag.name}
                             </IonChip>
                           </span>

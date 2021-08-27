@@ -23,6 +23,7 @@ interface DynamicLayout {
 interface ProjectTags {
   name: string;
   color?: string;
+  icon?: string;
 }
 
 interface ProjectLinks {
@@ -139,6 +140,9 @@ const ProjectsArea: React.FC<ContainerProps> = (props) => {
                         project.tags.map((tag, k) => (
                           <span className="skills" key={k}>
                             <IonChip key={k} color={tag.color ?? "primary"}>
+                              {tag.icon && (
+                                <IonIcon className="icon" icon={tag.icon} />
+                              )}
                               {tag.name}
                             </IonChip>
                           </span>
