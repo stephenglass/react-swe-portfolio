@@ -9,8 +9,8 @@ import {
   IonTitle,
 } from "@ionic/react";
 import { warningOutline, warningSharp } from "ionicons/icons";
-import "./Home.scss";
 import "../components/introduction-area/IntroductionArea.scss";
+import "./Home.scss";
 
 const NoPage: React.FC = () => {
   return (
