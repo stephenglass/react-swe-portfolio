@@ -14,6 +14,11 @@ import {
   documentSharp,
   mailOutline,
   mailSharp,
+  logoReact,
+  logoPython,
+  logoAngular,
+  logoNodejs,
+  logoDocker,
 } from "ionicons/icons";
 import React, { lazy } from "react";
 
@@ -28,6 +33,9 @@ const ProjectsArea = lazy(
 );
 const TimelineArea = lazy(
   () => import("../components/timeline-area/TimelineArea")
+);
+const ContactArea = lazy(
+  () => import("../components/contact-area/ContactArea")
 );
 
 interface AppSection {
@@ -80,22 +88,26 @@ This led to web development exploration using the <a href="#">LAMP</a> stack. My
           {
             text: "React",
             color: "primary",
+            icon: logoReact,
           },
           {
             text: "Angular",
-            color: "secondary",
+            color: "danger",
+            icon: logoAngular,
           },
           {
             text: "Express",
             color: "tertiary",
           },
           {
-            text: "JavaScript",
+            text: "Node.js",
             color: "success",
+            icon: logoNodejs,
           },
           {
             text: "Python",
             color: "warning",
+            icon: logoPython,
           },
           {
             text: "PHP",
@@ -103,11 +115,12 @@ This led to web development exploration using the <a href="#">LAMP</a> stack. My
           },
           {
             text: "Ionic",
-            color: "danger",
+            color: "warning",
           },
           {
-            text: "Flask",
+            text: "Docker",
             color: "primary",
+            icon: logoDocker,
           },
           {
             text: "SQL",
@@ -271,5 +284,13 @@ This led to web development exploration using the <a href="#">LAMP</a> stack. My
           },
         ],
       }),
+  },
+  {
+    title: "Contact",
+    url: "/contact",
+    iosIcon: mailOutline,
+    mdIcon: mailSharp,
+    divider: true,
+    render: () => React.createElement(ContactArea),
   },
 ];

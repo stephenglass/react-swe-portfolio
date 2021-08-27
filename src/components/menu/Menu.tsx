@@ -17,6 +17,13 @@ import { menuLinks } from "../../data/Links";
 import { MenuGestureThreshold, SideMenuDisabled } from "../../data/AppMeta";
 import "./Menu.scss";
 
+export interface MenuLink {
+  url: string;
+  iosIcon: string;
+  mdIcon: string;
+  title: string;
+}
+
 const Menu: React.FC = () => {
   const location = useLocation();
   const { sharedValue, setSharedValue } = useContext(AppContext);

@@ -4,13 +4,8 @@ import {
   logoGithub,
   logoLinkedin,
 } from "ionicons/icons";
-
-interface MenuLink {
-  url: string;
-  iosIcon: string;
-  mdIcon: string;
-  title: string;
-}
+import { MenuLink } from "../components/menu/Menu";
+import { FooterLink } from "../components/footer-area/FooterArea";
 
 export const menuLinks: MenuLink[] = [
   {
@@ -30,5 +25,13 @@ export const menuLinks: MenuLink[] = [
     url: "https://www.linkedin.com/in/stephen-glass/",
     iosIcon: logoLinkedin,
     mdIcon: logoLinkedin,
+  },
+];
+
+export const footerLinks: FooterLink[] = [
+  {
+    url: "#",
+    iosIcon: logoGithub,
+    mdIcon: logoGithub,
   },
 ];

@@ -1,26 +1,45 @@
 @import "../../theme/globals.scss";
 
 .padding-container {
-  margin-top: var(--footer-margin-top-mobile);
   width: 100%;
-  background: rgb(16, 17, 31);
-  background: -moz-linear-gradient(
-    180deg,
-    rgba(16, 17, 31, 1) 25%,
-    rgba(8, 8, 15, 1) 100%
-  );
-  background: -webkit-linear-gradient(
-    180deg,
-    rgba(16, 17, 31, 1) 25%,
-    rgba(8, 8, 15, 1) 100%
-  );
-  background: linear-gradient(
-    180deg,
-    rgba(16, 17, 31, 1) 25%,
-    rgba(8, 8, 15, 1) 100%
-  );
+  margin-top: var(--footer-margin-top-mobile);
+  height: var(--footer-height-mobile);
 
   @media only screen and (min-width: $breakpoint-sm) {
     margin-top: var(--footer-margin-top);
+    height: var(--footer-height-non-mobile);
+
+    // only allow background gradient effect on non-mobile because looks weird with scroll bounce affect
+    background: rgb(16, 17, 31);
+    background: -moz-linear-gradient(
+      180deg,
+      rgba(16, 17, 31, 1) 25%,
+      rgba(8, 8, 15, 1) 100%
+    );
+    background: -webkit-linear-gradient(
+      180deg,
+      rgba(16, 17, 31, 1) 25%,
+      rgba(8, 8, 15, 1) 100%
+    );
+    background: linear-gradient(
+      180deg,
+      rgba(16, 17, 31, 1) 25%,
+      rgba(8, 8, 15, 1) 100%
+    );
+  }
+}
+
+.footer {
+  color: var(--text-color-primary);
+  text-align: center;
+}
+
+.footer-links {
+  padding-top: 5px;
+  padding-right: 5px;
+  text-align: center;
+  a {
+    font-size: 36px;
+    color: #757575;
   }
 }

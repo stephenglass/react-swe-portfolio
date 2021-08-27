@@ -5,12 +5,14 @@ import {
   IonCol,
   IonRow,
   IonChip,
+  IonIcon,
 } from "@ionic/react";
 import "./AboutArea.scss";
 
 export interface AboutSkills {
   text: string;
   color: string;
+  icon?: string;
 }
 
 export interface ContainerProps {
@@ -50,11 +52,16 @@ const AboutArea: React.FC<ContainerProps> = ({
           >
             <div dangerouslySetInnerHTML={{ __html: text }}></div>
             <div className="skills">
-              {skills.map((skill, index) => (
-                <IonChip key={index} color={skill.color}>
-                  {skill.text}
-                </IonChip>
-              ))}
+              {skills &&
+                skills.map((skill, index) => (
+                  <IonChip key={index} color={skill.color}>
+                    {skill.icon && (
+                      <IonIcon className="icon" icon={skill.icon} />
+                    )}
+
+                    {skill.text}
+                  </IonChip>
+                ))}
             </div>
           </IonCol>
         </IonRow>
