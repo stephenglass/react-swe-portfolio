@@ -17,14 +17,18 @@ import {
 } from "ionicons/icons";
 import React, { lazy } from "react";
 
-import IntroductionArea from "../components/IntroductionArea";
+import IntroductionArea from "../components/introduction-area/IntroductionArea";
 
-const AboutArea = lazy(() => import("../components/AboutArea"));
+const AboutArea = lazy(() => import("../components/about-area/AboutArea"));
 const FeaturedProjectsArea = lazy(
-  () => import("../components/FeaturedProjectsArea")
+  () => import("../components/featured-projects-area/FeaturedProjectsArea")
 );
-const ProjectsArea = lazy(() => import("../components/ProjectsArea"));
-const TimelineArea = lazy(() => import("../components/TimelineArea"));
+const ProjectsArea = lazy(
+  () => import("../components/projects-area/ProjectsArea")
+);
+const TimelineArea = lazy(
+  () => import("../components/timeline-area/TimelineArea")
+);
 
 interface AppSection {
   url: string;

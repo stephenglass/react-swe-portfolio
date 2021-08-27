@@ -12,8 +12,8 @@ import {
   IonIcon,
 } from "@ionic/react";
 import { useMemo, useEffect, useState } from "react";
-import { PlaceholderImg } from "../data/AppMeta";
-import "./styles/ProjectsArea.scss";
+import { PlaceholderImg } from "../../data/AppMeta";
+import "./ProjectsArea.scss";
 
 interface DynamicLayout {
   minWidth?: number;

@@ -5,7 +5,7 @@ import {
   IonCardTitle,
   IonCardContent,
 } from "@ionic/react";
-import "./styles/Timeline.scss";
+import "./Timeline.scss";
 
 export interface TimelineObject {
   subtitle: string;

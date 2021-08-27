@@ -11,11 +11,11 @@ import {
 
 import { useContext } from "react";
 import { useLocation } from "react-router-dom";
-import { AppContext } from "../AppContext";
-import { appSections } from "../data/AppData";
-import { menuLinks } from "../data/Links";
-import { MenuGestureThreshold, SideMenuDisabled } from "../data/AppMeta";
-import "./styles/Menu.scss";
+import { AppContext } from "../../AppContext";
+import { appSections } from "../../data/AppData";
+import { menuLinks } from "../../data/Links";
+import { MenuGestureThreshold, SideMenuDisabled } from "../../data/AppMeta";
+import "./Menu.scss";
 
 const Menu: React.FC = () => {
   const location = useLocation();

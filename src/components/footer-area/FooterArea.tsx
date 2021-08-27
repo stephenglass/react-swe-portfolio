@@ -1,5 +1,8 @@
-import { FooterPaddingMobile, FooterPaddingNonMobile } from "../data/AppMeta";
-import "./styles/FooterArea.scss";
+import {
+  FooterPaddingMobile,
+  FooterPaddingNonMobile,
+} from "../../data/AppMeta";
+import "./FooterArea.scss";
 
 export interface ContainerProps {
   widthBreakpoint?: number;

@@ -1,6 +1,6 @@
 import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
-import { ObserverThreshold } from "../data/AppMeta";
+import { ObserverThreshold } from "../../data/AppMeta";
 
 interface ContainerProps {
   index: number;

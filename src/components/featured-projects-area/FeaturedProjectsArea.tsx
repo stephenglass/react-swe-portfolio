@@ -11,8 +11,8 @@ import {
   IonCardSubtitle,
 } from "@ionic/react";
 import { useMemo } from "react";
-import { PlaceholderImg } from "../data/AppMeta";
-import "./styles/FeaturedProjectsArea.scss";
+import { PlaceholderImg } from "../../data/AppMeta";
+import "./FeaturedProjectsArea.scss";
 
 interface FeaturedProjectTags {
   name: string;

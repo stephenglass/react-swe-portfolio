@@ -3,7 +3,7 @@ import {
   informationCircleOutline,
   informationCircleSharp,
 } from "ionicons/icons";
-import "./styles/SectionDivider.scss";
+import "./SectionDivider.scss";
 
 interface ContainerProps {
   text: string;

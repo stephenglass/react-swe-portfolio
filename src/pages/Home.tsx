@@ -20,9 +20,9 @@ import { useHistory } from "react-router-dom";
 import { AppContext } from "../AppContext";
 import { appSections } from "../data/AppData";
 import { Constants, EventType } from "../data/AppEnums";
-import SectionContainer from "../components/SectionContainer";
-import SectionDivider from "../components/SectionDivider";
-import FooterArea from "../components/FooterArea";
+import SectionContainer from "../components/section-container/SectionContainer";
+import SectionDivider from "../components/section-divider/SectionDivider";
+import FooterArea from "../components/footer-area/FooterArea";
 import "./Home.scss";
 
 const Home: React.FC = () => {
