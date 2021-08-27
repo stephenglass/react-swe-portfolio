@@ -246,7 +246,7 @@ This led to web development exploration using the <a href="#">LAMP</a> stack. My
             links: [{ link: "#", iosIcon: logoGithub, mdIcon: logoGithub }],
           },
           {
-            title: "UART RGB LEDs",
+            title: "Socket.Io Game",
             description: "Foobar",
             tags: [
               { name: "TypeScript", color: "danger" },
