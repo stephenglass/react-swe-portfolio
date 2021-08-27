@@ -69,7 +69,22 @@ const Home: React.FC = () => {
   useEffect(() => {
     if (isDomRendered.current && visibleElements.length > 0) {
       console.log("visibleElements: ", visibleElements);
-      const index = Math.min(...visibleElements);
+
+      var index;
+      // footer in view. if footer is in view then change logic to set bottom most app section
+      if (
+        Math.max(...visibleElements) === appSections.length &&
+        visibleElements.length > 1
+      ) {
+        index = Math.max(
+          ...[...visibleElements].filter(
+            (elements) => elements !== appSections.length
+          )
+        );
+      } else {
+        index = Math.min(...visibleElements);
+      }
+
       const element = appSections[index].url.substr(1);
       if (sharedValue.lastViewedElement !== element) {
         console.log("setting to: ", element);
@@ -145,7 +160,14 @@ const Home: React.FC = () => {
             </SectionContainer>
           ))}
         </div>
-        <FooterArea />
+        <SectionContainer
+          index={appSections.length}
+          name="system_footer"
+          addElement={addVisibleElement}
+          removeElement={removeVisibleElement}
+        >
+          <FooterArea />
+        </SectionContainer>
       </IonContent>
     </IonPage>
   );

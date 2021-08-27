@@ -1,6 +1,6 @@
 import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
-import { ObserverThreshold } from "../../data/AppMeta";
+import { ObserverRootMargin } from "../../data/AppMeta";
 
 interface ContainerProps {
   index: number;
@@ -17,11 +17,7 @@ const SectionContainer: React.FC<ContainerProps> = ({
   addElement,
   removeElement,
 }) => {
-  // const ref = useRef<HTMLInputElement | null>(null);
-  // const isVisible = useIntersection(ref, "-25px");
-  const [ref, inView] = useInView({
-    threshold: ObserverThreshold,
-  });
+  const [ref, inView] = useInView({ rootMargin: ObserverRootMargin });
 
   useEffect(() => {
     if (inView) {
