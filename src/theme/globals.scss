@@ -3,6 +3,13 @@ $breakpoint-lg: 992px;
 $breakpoint-md: 768px;
 $breakpoint-sm: 576px;
 
+// background effect (hsl color space)
+// default is 200 - 225 for nice blue effect
+// another cool one could be 0 - 25 for red/orange look
+$effect-hue-min: 200;
+$effect-hue-max: 225;
+$effect-brightness: 25%;
+
 .split-pane {
   --side-width: 5%;
 }

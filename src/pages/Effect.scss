@@ -1,0 +1,79 @@
+@import "../theme/globals.scss";
+
+@mixin dots($count) {
+  $text-shadow: ();
+  @for $i from 0 through $count {
+    $text-shadow: $text-shadow,
+      (-0.5+ (random()) * 3) +
+        em
+        (-0.5+ (random()) * 3) +
+        em
+        5.25px
+        hsla(
+          random($effect-hue-max - $effect-hue-min) + $effect-hue-min,
+          100%,
+          $effect-brightness,
+          0.5
+        );
+  }
+  text-shadow: $text-shadow;
+}
+
+.page-effect {
+  position: absolute;
+  height: 50vh;
+  width: 100%;
+  color: transparent;
+}
+
+@media only screen and (min-width: $breakpoint-sm) {
+  .effect::before {
+    position: absolute;
+    top: 0s;
+    left: 75%;
+    content: "*";
+    // mix-blend-mode: screen;
+    animation: 20s 0s move infinite ease-in-out alternate;
+  }
+
+  .effect::before {
+    @include dots(50);
+    animation-duration: 20s;
+    animation-delay: 0s;
+  }
+
+  @keyframes move {
+    from {
+      transform: rotate(0deg) scale(18) translateX(-10px);
+    }
+    to {
+      transform: rotate(45deg) scale(16) translateX(10px);
+    }
+  }
+}
+
+@media only screen and (max-width: $breakpoint-sm) {
+  .effect::before {
+    position: absolute;
+    top: 0s;
+    left: 25%;
+    content: "*";
+    mix-blend-mode: screen;
+    animation: 10s 0s move infinite ease-in-out alternate;
+  }
+
+  .effect::before {
+    @include dots(25);
+    animation-duration: 10s;
+    animation-delay: 0s;
+  }
+
+  @keyframes move {
+    from {
+      transform: rotate(0deg) scale(16) translateX(-5px);
+    }
+    to {
+      transform: rotate(45deg) scale(14) translateX(5px);
+    }
+  }
+}

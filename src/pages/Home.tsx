@@ -24,6 +24,7 @@ import SectionContainer from "../components/section-container/SectionContainer";
 import SectionDivider from "../components/section-divider/SectionDivider";
 import FooterArea from "../components/footer-area/FooterArea";
 import "./Home.scss";
+import "./Effect.scss";
 
 const Home: React.FC = () => {
   const history = useHistory();
@@ -146,6 +147,9 @@ const Home: React.FC = () => {
       </IonHeader>
 
       <IonContent className="main-page" fullscreen>
+        <div className="page-effect">
+          <div className="effect"></div>
+        </div>
         <div className="page-container">
           {appSections.map((n, index) => (
             <SectionContainer
