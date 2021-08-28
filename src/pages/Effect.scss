@@ -29,10 +29,8 @@
 @media only screen and (min-width: $breakpoint-sm) {
   .effect::before {
     position: absolute;
-    top: 0s;
     left: 75%;
     content: "*";
-    // mix-blend-mode: screen;
     animation: 20s 0s move infinite ease-in-out alternate;
   }
 
@@ -52,28 +50,28 @@
   }
 }
 
-@media only screen and (max-width: $breakpoint-sm) {
-  .effect::before {
-    position: absolute;
-    top: 0s;
-    left: 25%;
-    content: "*";
-    mix-blend-mode: screen;
-    animation: 10s 0s move infinite ease-in-out alternate;
-  }
-
-  .effect::before {
-    @include dots(25);
-    animation-duration: 10s;
-    animation-delay: 0s;
-  }
-
-  @keyframes move {
-    from {
-      transform: rotate(0deg) scale(16) translateX(-5px);
+@if $effect-enable-mobile == 1 {
+  @media only screen and (max-width: $breakpoint-sm) {
+    .effect::before {
+      position: absolute;
+      left: 25%;
+      content: "*";
+      animation: 10s 0s move infinite ease-in-out alternate;
     }
-    to {
-      transform: rotate(45deg) scale(14) translateX(5px);
+
+    .effect::before {
+      @include dots(10);
+      animation-duration: 10s;
+      animation-delay: 0s;
+    }
+
+    @keyframes move {
+      from {
+        transform: rotate(0deg) scale(16) translateX(-5px);
+      }
+      to {
+        transform: rotate(45deg) scale(14) translateX(5px);
+      }
     }
   }
 }
