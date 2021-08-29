@@ -8,7 +8,7 @@
         em
         (-0.5+ (random()) * 3) +
         em
-        5.25px
+        7px
         hsla(
           random($effect-hue-max - $effect-hue-min) + $effect-hue-min,
           100%,

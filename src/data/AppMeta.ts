@@ -1,4 +1,4 @@
-export const BackgroundEffect = false;
+export const BackgroundEffect = true;
 export const SideMenuDisabled = false;
 export const MenuGestureThreshold = 85;
 export const ObserverRootMargin = "-75px";
