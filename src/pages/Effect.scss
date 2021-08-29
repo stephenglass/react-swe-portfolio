@@ -36,17 +36,17 @@
     }
 
     .effect::before {
-      @include dots(50);
+      @include dots(25);
       animation-duration: 20s;
       animation-delay: 0s;
     }
 
     @keyframes move {
       from {
-        transform: rotate(0deg) scale(18) translateX(-10px);
+        transform: rotate(0deg) scale(18);
       }
       to {
-        transform: rotate(45deg) scale(16) translateX(10px);
+        transform: rotate(45deg) scale(16);
       }
     }
   }

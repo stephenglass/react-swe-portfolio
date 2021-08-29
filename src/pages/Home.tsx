@@ -24,7 +24,7 @@ import SectionContainer from "../components/section-container/SectionContainer";
 import SectionDivider from "../components/section-divider/SectionDivider";
 import FooterArea from "../components/footer-area/FooterArea";
 import "./Home.scss";
-// import "./Effect.scss";
+import "./Effect.scss";
 import { BackgroundEffect } from "../data/AppMeta";
 
 const Home: React.FC = () => {

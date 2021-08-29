@@ -69,9 +69,6 @@
     animation-fill-mode: both;
     opacity: 0;
   }
-  &.fadeIn {
-    animation-name: fadeIn;
-  }
 }
 
 .timeline__item--left {
@@ -253,25 +250,5 @@
         }
       }
     }
-  }
-}
-
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-    top: 70px;
-  }
-  100% {
-    opacity: 1;
-    top: 0px;
-  }
-}
-
-@keyframes liftUp {
-  0% {
-    top: 0px;
-  }
-  100% {
-    top: -15px;
   }
 }
