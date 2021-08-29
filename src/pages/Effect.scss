@@ -19,58 +19,60 @@
   text-shadow: $text-shadow;
 }
 
-.page-effect {
-  position: absolute;
-  height: 50vh;
-  width: 100%;
-  color: transparent;
-}
-
-@media only screen and (min-width: $breakpoint-sm) {
-  .effect::before {
+@if $effect-enable-all == 1 {
+  .page-effect {
     position: absolute;
-    left: 75%;
-    content: "*";
-    animation: 20s 0s move infinite ease-in-out alternate;
+    height: 50vh;
+    width: 100%;
+    color: transparent;
   }
 
-  .effect::before {
-    @include dots(50);
-    animation-duration: 20s;
-    animation-delay: 0s;
-  }
-
-  @keyframes move {
-    from {
-      transform: rotate(0deg) scale(18) translateX(-10px);
-    }
-    to {
-      transform: rotate(45deg) scale(16) translateX(10px);
-    }
-  }
-}
-
-@if $effect-enable-mobile == 1 {
-  @media only screen and (max-width: $breakpoint-sm) {
+  @media only screen and (min-width: $breakpoint-sm) {
     .effect::before {
       position: absolute;
-      left: 25%;
+      left: 75%;
       content: "*";
-      animation: 10s 0s move infinite ease-in-out alternate;
+      animation: 20s 0s move infinite ease-in-out alternate;
     }
 
     .effect::before {
-      @include dots(10);
-      animation-duration: 10s;
+      @include dots(50);
+      animation-duration: 20s;
       animation-delay: 0s;
     }
 
     @keyframes move {
       from {
-        transform: rotate(0deg) scale(16) translateX(-5px);
+        transform: rotate(0deg) scale(18) translateX(-10px);
       }
       to {
-        transform: rotate(45deg) scale(14) translateX(5px);
+        transform: rotate(45deg) scale(16) translateX(10px);
+      }
+    }
+  }
+
+  @if $effect-enable-mobile == 1 {
+    @media only screen and (max-width: $breakpoint-sm) {
+      .effect::before {
+        position: absolute;
+        left: 25%;
+        content: "*";
+        animation: 10s 0s move infinite ease-in-out alternate;
+      }
+
+      .effect::before {
+        @include dots(10);
+        animation-duration: 10s;
+        animation-delay: 0s;
+      }
+
+      @keyframes move {
+        from {
+          transform: rotate(0deg) scale(16) translateX(-5px);
+        }
+        to {
+          transform: rotate(45deg) scale(14) translateX(5px);
+        }
       }
     }
   }
