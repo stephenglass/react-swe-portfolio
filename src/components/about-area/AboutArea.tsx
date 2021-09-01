@@ -8,10 +8,8 @@ import {
   IonIcon,
   IonCard,
   IonCardHeader,
-  IonCardTitle,
   IonCardSubtitle,
 } from "@ionic/react";
-import { PlaceholderImg } from "../../data/AppMeta";
 import "./AboutArea.scss";
 
 export interface AboutSkills {
@@ -20,11 +18,17 @@ export interface AboutSkills {
   icon?: string;
 }
 
+export interface FavoriteSkills {
+  text: string;
+  img: string;
+}
+
 export interface ContainerProps {
   reverse?: boolean;
   text: string;
   img: string;
   skills: AboutSkills[];
+  favoriteSkills?: FavoriteSkills[];
 }
 
 const AboutArea: React.FC<ContainerProps> = ({
@@ -32,6 +36,7 @@ const AboutArea: React.FC<ContainerProps> = ({
   img,
   text,
   skills,
+  favoriteSkills,
 }) => {
   return (
     <div className="about-container">
@@ -71,38 +76,26 @@ const AboutArea: React.FC<ContainerProps> = ({
           </IonCol>
         </IonRow>
       </IonGrid>
-      <br />
-      <div className="favorite-skills">
-        <h2>Favorite Technology</h2>
-        <IonGrid>
-          <IonRow>
-            <IonCol className="ion-no-padding">
-              <IonCard className="skill-card no-margin-left">
-                <IonImg src="../assets/svg/icons8-react-color.svg" />
-                <IonCardHeader>
-                  <IonCardSubtitle>React</IonCardSubtitle>
-                </IonCardHeader>
-              </IonCard>
-            </IonCol>
-            <IonCol className="ion-no-padding">
-              <IonCard className="skill-card no-margin-middle">
-                <IonImg src="../assets/svg/icons8-angular-color.svg" />
-                <IonCardHeader>
-                  <IonCardSubtitle>Angular</IonCardSubtitle>
-                </IonCardHeader>
-              </IonCard>
-            </IonCol>
-            <IonCol className="ion-no-padding">
-              <IonCard className="skill-card no-margin-right">
-                <IonImg src="../assets/svg/icons8-ionic-color.svg" />
-                <IonCardHeader>
-                  <IonCardSubtitle>Ionic</IonCardSubtitle>
-                </IonCardHeader>
-              </IonCard>
-            </IonCol>
-          </IonRow>
-        </IonGrid>
-      </div>
+      {favoriteSkills && (
+        <div className="favorite-skills">
+          <br />
+          <h2>Favorite Technology</h2>
+          <IonGrid>
+            <IonRow>
+              {favoriteSkills.map((skill, index) => (
+                <IonCol key={index} className="ion-no-padding">
+                  <IonCard className="skill-card no-margin-left">
+                    <IonImg src={skill.img} />
+                    <IonCardHeader>
+                      <IonCardSubtitle>{skill.text}</IonCardSubtitle>
+                    </IonCardHeader>
+                  </IonCard>
+                </IonCol>
+              ))}
+            </IonRow>
+          </IonGrid>
+        </div>
+      )}
     </div>
   );
 };

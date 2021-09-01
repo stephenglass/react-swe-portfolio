@@ -134,6 +134,11 @@ This led to web development exploration using the <a href="#">LAMP</a> stack. My
           },
         ],
         reverse: true,
+        favoriteSkills: [
+          { text: "React", img: "../assets/svg/icons8-react-color.svg" },
+          { text: "Angular", img: "../assets/svg/icons8-angular-color.svg" },
+          { text: "Ionic", img: "../assets/svg/icons8-ionic-color.svg" },
+        ],
       }),
   },
   {
