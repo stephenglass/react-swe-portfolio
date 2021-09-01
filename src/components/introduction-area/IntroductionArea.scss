@@ -7,6 +7,12 @@
     color: var(--text-color-secondary);
   }
 
+  @media only screen and (max-width: 360px) {
+    h1 {
+      font-size: 56px;
+    }
+  }
+
   h2 {
     font-size: 20px;
     color: var(--text-color-primary);

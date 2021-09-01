@@ -6,7 +6,12 @@ import {
   IonRow,
   IonChip,
   IonIcon,
+  IonCard,
+  IonCardHeader,
+  IonCardTitle,
+  IonCardSubtitle,
 } from "@ionic/react";
+import { PlaceholderImg } from "../../data/AppMeta";
 import "./AboutArea.scss";
 
 export interface AboutSkills {
@@ -66,6 +71,38 @@ const AboutArea: React.FC<ContainerProps> = ({
           </IonCol>
         </IonRow>
       </IonGrid>
+      <br />
+      <div className="favorite-skills">
+        <h2>Favorite Technology</h2>
+        <IonGrid>
+          <IonRow>
+            <IonCol className="ion-no-padding">
+              <IonCard className="skill-card no-margin-left">
+                <IonImg src="../assets/svg/icons8-react-color.svg" />
+                <IonCardHeader>
+                  <IonCardSubtitle>React</IonCardSubtitle>
+                </IonCardHeader>
+              </IonCard>
+            </IonCol>
+            <IonCol className="ion-no-padding">
+              <IonCard className="skill-card no-margin-middle">
+                <IonImg src="../assets/svg/icons8-angular-color.svg" />
+                <IonCardHeader>
+                  <IonCardSubtitle>Angular</IonCardSubtitle>
+                </IonCardHeader>
+              </IonCard>
+            </IonCol>
+            <IonCol className="ion-no-padding">
+              <IonCard className="skill-card no-margin-right">
+                <IonImg src="../assets/svg/icons8-ionic-color.svg" />
+                <IonCardHeader>
+                  <IonCardSubtitle>Ionic</IonCardSubtitle>
+                </IonCardHeader>
+              </IonCard>
+            </IonCol>
+          </IonRow>
+        </IonGrid>
+      </div>
     </div>
   );
 };

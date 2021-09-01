@@ -78,7 +78,7 @@ export const appSections: AppSection[] = [
         img: "../assets/img/sg8717.png",
         text: `My journey into software began in 2008 creating online multiplayer video game modifications using a simple embedded scripting language called <a href="#">PAWN</a>.
 
-This led to web development exploration using the <a href="#">LAMP</a> stack. My software experience has since grown tremendously to include modern frameworks in addition to embedded software, databases, and more.
+This led to web development exploration using the <a href="#">LAMP</a> stack. My software experience has since grown tremendously to include modern frameworks in addition to embedded software, databases, cloud services, and more.
 
 `,
         skills: [
@@ -194,17 +194,15 @@ This led to web development exploration using the <a href="#">LAMP</a> stack. My
             subtitle: "2021",
             title: "AT&T",
             undertitle: "Sr. Specialist Software Engineer",
-            description: `Keep close to Nature's heart... and break clear away, once
-                    in awhile, and climb a mountain or spend a week in the
-                    woods. Wash your spirit clean.`,
+            description: `Modernized critical on-premises applications by converting
+                      to Angular and Microsoft Azure cloud backends.`,
           },
           {
             subtitle: "2019",
             title: "Lockheed Martin",
             undertitle: "Member of Engineering Staff",
-            description: `Keep close to Nature's heart... and break clear away, once
-                    in awhile, and climb a mountain or spend a week in the
-                    woods. Wash your spirit clean.`,
+            description: `Developed C++ software for radar subarrays and created support
+                      tools using Python. Deployment on-site.`,
           },
         ],
       }),
