@@ -19,6 +19,12 @@ import {
   logoAngular,
   logoNodejs,
   logoDocker,
+  calculatorOutline,
+  gameControllerOutline,
+  wifiOutline,
+  terminalOutline,
+  hardwareChipSharp,
+  sunnyOutline,
 } from "ionicons/icons";
 import { customIcons } from "./AppMeta";
 import React, { lazy } from "react";
@@ -228,7 +234,8 @@ This led to web development exploration using the <a href="#">LAMP</a> stack. My
         projects: [
           {
             title: "Resistor Calculator",
-            description: "Foobar",
+            description:
+              "Web app to calculate the value of a resistor from color codes.",
             tags: [
               {
                 name: "TypeScript",
@@ -242,10 +249,19 @@ This led to web development exploration using the <a href="#">LAMP</a> stack. My
               { link: "#", iosIcon: logoGithub, mdIcon: logoGithub },
               { link: "#", iosIcon: folderOutline, mdIcon: folderSharp },
             ],
+            imgType: "icon",
+            img: calculatorOutline,
+            ribbon: {
+              color: "white",
+              background: "var(--ion-color-danger)",
+              contentType: "text",
+              content: "New",
+            },
           },
           {
             title: "Software Portfolio",
-            description: "Foobar",
+            description:
+              "Dynamic online portfolio built using React and Ionic.",
             tags: [
               {
                 name: "TypeScript",
@@ -255,62 +271,82 @@ This led to web development exploration using the <a href="#">LAMP</a> stack. My
               { name: "React", color: "primary", icon: logoReact },
               { name: "Ionic", color: "danger", icon: customIcons.logoIonic },
             ],
+            imgType: "icon",
+            img: personOutline,
             links: [{ link: "#", iosIcon: logoGithub, mdIcon: logoGithub }],
+            ribbon: {
+              color: "white",
+              background: "var(--ion-color-primary)",
+              contentType: "icon",
+              content: starOutline,
+            },
           },
           {
             title: "MSP430 Asteroids",
-            description: "Foobar",
+            description: "Asteroids terminal game for MSP430 micro-controller.",
             tags: [
-              {
-                name: "TypeScript",
-                color: "danger",
-                icon: customIcons.logoTypeScript,
-              },
-              { name: "React", color: "primary", icon: logoReact },
-              { name: "Ionic", color: "danger", icon: customIcons.logoIonic },
+              { name: "C++", color: "warning", icon: customIcons.logoCpp },
+              { name: "Embedded", color: "success", icon: hardwareChipSharp },
             ],
+            imgType: "icon",
+            img: terminalOutline,
             links: [{ link: "#", iosIcon: logoGithub, mdIcon: logoGithub }],
           },
           {
             title: "ESP8266 Line Sensor",
-            description: "Foobar",
+            description:
+              "Embedded system to detect length of a line and view on web app.",
             tags: [
-              {
-                name: "TypeScript",
-                color: "danger",
-                icon: customIcons.logoTypeScript,
-              },
-              { name: "React", color: "primary", icon: logoReact },
-              { name: "Ionic", color: "danger", icon: customIcons.logoIonic },
+              { name: "C++", color: "warning", icon: customIcons.logoCpp },
+              { name: "PHP", color: "tertiary", icon: customIcons.logoPhp },
+              { name: "MySQL", color: "danger", icon: customIcons.logoMysql },
+              { name: "Embedded", color: "success", icon: hardwareChipSharp },
             ],
+            imgType: "icon",
+            img: wifiOutline,
             links: [{ link: "#", iosIcon: logoGithub, mdIcon: logoGithub }],
           },
           {
             title: "Socket.Io Game",
-            description: "Foobar",
+            description:
+              "Real-time multiplayer browser game using web sockets.",
             tags: [
+              {
+                name: "Express",
+                color: "secondary",
+                icon: customIcons.logoExpress,
+              },
+              { name: "React", color: "primary", icon: logoReact },
               {
                 name: "TypeScript",
                 color: "danger",
                 icon: customIcons.logoTypeScript,
               },
-              { name: "React", color: "primary", icon: logoReact },
-              { name: "Ionic", color: "danger", icon: customIcons.logoIonic },
             ],
+            imgType: "icon",
+            img: gameControllerOutline,
             links: [{ link: "#", iosIcon: logoGithub, mdIcon: logoGithub }],
           },
           {
             title: "Audio Equalizer",
-            description: "Foobar",
+            description:
+              "Circuit for a 3-band audio equalizer using analog components.",
             tags: [
-              {
-                name: "TypeScript",
-                color: "danger",
-                icon: customIcons.logoTypeScript,
-              },
-              { name: "React", color: "primary", icon: logoReact },
-              { name: "Ionic", color: "danger", icon: customIcons.logoIonic },
+              { name: "Circuit", color: "success", icon: hardwareChipSharp },
             ],
+            imgType: "icon",
+            img: statsChartOutline,
+            links: [{ link: "#", iosIcon: logoGithub, mdIcon: logoGithub }],
+          },
+          {
+            title: "Solar Panel Control",
+            description: "Two-axis solar panel positioning embedded system.",
+            tags: [
+              { name: "C++", color: "warning", icon: customIcons.logoCpp },
+              { name: "Embedded", color: "success", icon: hardwareChipSharp },
+            ],
+            imgType: "icon",
+            img: sunnyOutline,
             links: [{ link: "#", iosIcon: logoGithub, mdIcon: logoGithub }],
           },
         ],

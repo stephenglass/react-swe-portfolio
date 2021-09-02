@@ -163,7 +163,9 @@ const Home: React.FC = () => {
               removeElement={removeVisibleElement}
             >
               {n.divider && <SectionDivider text={n.title} info={n.info} />}
-              <Suspense fallback={<h1>Loading…</h1>}>{n.render()}</Suspense>
+              <Suspense fallback={<h1 style={{ color: "white" }}>Loading…</h1>}>
+                {n.render()}
+              </Suspense>
             </SectionContainer>
           ))}
         </div>

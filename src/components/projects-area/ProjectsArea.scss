@@ -16,10 +16,10 @@
     padding: 0px 0px 0px 0px;
   }
 
-  @media only screen and (min-width: $breakpoint-md) {
-    .img-extended {
-      width: 200px;
-    }
+  .project-icon {
+    height: 50px;
+    width: 50px;
+    margin-left: -5px;
   }
 
   .project-card {
@@ -31,7 +31,25 @@
   /* breakpoint = ionic sm */
   @media only screen and (min-width: $breakpoint-sm) {
     .project-card {
-      height: 210px;
+      height: 235px;
+    }
+
+    ion-row {
+      min-height: 55px;
+    }
+
+    .description {
+      height: 65px;
+      overflow: hidden;
+    }
+  }
+
+  @media only screen and (min-width: $breakpoint-md) {
+    .img-extended {
+      width: 200px;
+    }
+    .project-card {
+      height: 235px;
     }
   }
 
@@ -98,4 +116,17 @@
   .card-header {
     padding-bottom: 0;
   }
+}
+
+.corner-ribbon {
+  width: 200px;
+  position: absolute;
+  top: 5px;
+  left: -80px;
+  text-align: center;
+  line-height: 25px;
+  letter-spacing: 1px;
+  color: black;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
 }

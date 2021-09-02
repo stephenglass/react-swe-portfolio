@@ -32,13 +32,22 @@ interface ProjectLinks {
   link: string;
 }
 
+interface ProjectRibbon {
+  background: string;
+  color: string;
+  contentType: "text" | "icon";
+  content: string;
+}
+
 interface ProjectsObject {
   img?: string;
+  imgType?: "img" | "icon";
   title: string;
   links?: ProjectLinks[];
   description: string;
   link?: string;
   tags?: ProjectTags[];
+  ribbon?: ProjectRibbon;
 }
 
 export interface ContainerProps {
@@ -134,6 +143,21 @@ const ProjectsArea: React.FC<ContainerProps> = (props) => {
                       : " top")
                   }
                 >
+                  {project.ribbon && (
+                    <div
+                      className="corner-ribbon"
+                      style={{
+                        background: project.ribbon.background,
+                        color: project.ribbon.color,
+                      }}
+                    >
+                      {project.ribbon.contentType === "icon" ? (
+                        <IonIcon icon={project.ribbon.content}></IonIcon>
+                      ) : (
+                        <>{project.ribbon.content}</>
+                      )}
+                    </div>
+                  )}
                   <IonCardHeader className="card-header">
                     <div className="header">
                       {project.tags &&
@@ -157,22 +181,37 @@ const ProjectsArea: React.FC<ContainerProps> = (props) => {
                           <IonCardTitle>{project.title}</IonCardTitle>
                         </IonCol>
                         <IonCol size="4">
-                          <IonThumbnail>
-                            <IonImg
-                              className={
-                                projects.length === 1 ? "img-extended" : ""
-                              }
-                              src={project.img ?? PlaceholderImg}
-                              alt="project image"
-                            />
-                          </IonThumbnail>
+                          {project.imgType === "img" && project.img ? (
+                            <IonThumbnail>
+                              <IonImg
+                                className={
+                                  projects.length === 1 ? "img-extended" : ""
+                                }
+                                src={project.img ?? PlaceholderImg}
+                                alt="project image"
+                              />
+                            </IonThumbnail>
+                          ) : (
+                            <>
+                              {project.img && (
+                                <IonIcon
+                                  icon={project.img}
+                                  className={
+                                    projects.length === 1
+                                      ? "project-icon img-extended"
+                                      : "project-icon"
+                                  }
+                                />
+                              )}
+                            </>
+                          )}
                         </IonCol>
                       </IonRow>
                     </IonGrid>
                   </IonCardHeader>
 
-                  <IonCardContent className="content-container">
-                    {project.description}
+                  <IonCardContent>
+                    <div className="description">{project.description}</div>
                     <div className="links">
                       {project.links &&
                         project.links.map((link: ProjectLinks, k: number) => (

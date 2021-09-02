@@ -10,4 +10,5 @@ export const customIcons = {
   logoMysql: "../assets/svg/icons8-mysql-logo.svg",
   logoIonic: "../assets/svg/icons8-ionic.svg",
   logoExpress: "../assets/svg/expressjs-icon.svg",
+  logoCpp: "../assets/svg/icons8-c++.svg",
 };
