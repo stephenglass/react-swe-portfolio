@@ -17,7 +17,7 @@ const FooterArea: React.FC = () => {
       <div className="footer-links">
         {footerLinks.length > 0 &&
           footerLinks.map((link: FooterLink, k: number) => (
-            <a key={k} href={link.url}>
+            <a key={k} href={link.url} target="_blank" rel="noreferrer">
               <IonIcon ios={link.iosIcon} md={link.mdIcon} />
             </a>
           ))}

@@ -25,6 +25,8 @@ import {
   terminalOutline,
   hardwareChipSharp,
   sunnyOutline,
+  documentTextOutline,
+  documentTextSharp,
 } from "ionicons/icons";
 import { customIcons } from "./AppMeta";
 import React, { lazy } from "react";
@@ -68,8 +70,18 @@ export const appSections: AppSection[] = [
         description:
           "I build web apps and more using latest technologies. Check out what I've been working on.",
         buttons: [
-          { text: "Resume", iosIcon: documentOutline, mdIcon: documentSharp },
-          { text: "Email", iosIcon: mailOutline, mdIcon: mailSharp },
+          {
+            text: "Resume",
+            link: "../docs/Resume_StephenGlass_V7.pdf",
+            iosIcon: documentOutline,
+            mdIcon: documentSharp,
+          },
+          {
+            text: "Email",
+            link: "mailto:sglass520@gmail.com",
+            iosIcon: mailOutline,
+            mdIcon: mailSharp,
+          },
         ],
       }),
   },
@@ -82,9 +94,9 @@ export const appSections: AppSection[] = [
     render: () =>
       React.createElement(AboutArea, {
         img: "../assets/img/sg8717.png",
-        text: `My journey into software began in 2008 creating online multiplayer video game modifications using a simple embedded scripting language called <a href="#">PAWN</a>.
+        text: `My journey into software began in 2008 creating online multiplayer video game modifications using a simple embedded scripting language called <a href="https://www.compuphase.com/pawn/pawnfeatures.htm" target="_blank" rel="noreferrer">PAWN</a>.
 
-This led to web development exploration using the <a href="#">LAMP</a> stack. My software experience has since grown tremendously to include modern frameworks in addition to embedded software, databases, cloud services, and more.
+This led to web development exploration using the <a href="https://en.wikipedia.org/wiki/LAMP_(software_bundle)" target="_blank" rel="noreferrer">LAMP</a> stack. My software experience has since grown tremendously to include modern frameworks in addition to embedded software, databases, cloud services, and more.
 
 `,
         skills: [
@@ -161,7 +173,9 @@ This led to web development exploration using the <a href="#">LAMP</a> stack. My
           {
             title: "Pain Manangement App",
             subtitle: "Rowan University",
-            description: "Foobar",
+            img: "../assets/img/pain_management.png",
+            description:
+              "Developing a mobile application to be used by patients for recording pain, depression, and biometric data monitored by doctors.",
             tags: [
               {
                 name: "TypeScript",
@@ -174,8 +188,10 @@ This led to web development exploration using the <a href="#">LAMP</a> stack. My
           },
           {
             title: "Mortality Tool App",
-            description: "Foobar",
+            description:
+              "Cross-platform web application for ICU patient data collection and prediction of mortality using machine learning algorithms on cloud.",
             subtitle: "Cooper Medical School",
+            img: "../assets/img/mortality.png",
             tags: [
               {
                 name: "TypeScript",
@@ -290,7 +306,13 @@ This led to web development exploration using the <a href="#">LAMP</a> stack. My
             ],
             imgType: "icon",
             img: terminalOutline,
-            links: [{ link: "#", iosIcon: logoGithub, mdIcon: logoGithub }],
+            links: [
+              {
+                link: "https://github.com/sglass520/embedded-asteroidsGame",
+                iosIcon: logoGithub,
+                mdIcon: logoGithub,
+              },
+            ],
           },
           {
             title: "ESP8266 Line Sensor",
@@ -304,7 +326,18 @@ This led to web development exploration using the <a href="#">LAMP</a> stack. My
             ],
             imgType: "icon",
             img: wifiOutline,
-            links: [{ link: "#", iosIcon: logoGithub, mdIcon: logoGithub }],
+            links: [
+              {
+                link: "https://github.com/sglass520/msp430-queueCounter",
+                iosIcon: logoGithub,
+                mdIcon: logoGithub,
+              },
+              {
+                link: "#",
+                iosIcon: documentTextOutline,
+                mdIcon: documentTextSharp,
+              },
+            ],
           },
           {
             title: "Socket.Io Game",
@@ -325,7 +358,13 @@ This led to web development exploration using the <a href="#">LAMP</a> stack. My
             ],
             imgType: "icon",
             img: gameControllerOutline,
-            links: [{ link: "#", iosIcon: logoGithub, mdIcon: logoGithub }],
+            links: [
+              {
+                link: "https://github.com/sglass520/react-socket-demo",
+                iosIcon: logoGithub,
+                mdIcon: logoGithub,
+              },
+            ],
           },
           {
             title: "Audio Equalizer",
@@ -336,7 +375,13 @@ This led to web development exploration using the <a href="#">LAMP</a> stack. My
             ],
             imgType: "icon",
             img: statsChartOutline,
-            links: [{ link: "#", iosIcon: logoGithub, mdIcon: logoGithub }],
+            links: [
+              {
+                link: "#",
+                iosIcon: documentTextOutline,
+                mdIcon: documentTextSharp,
+              },
+            ],
           },
           {
             title: "Solar Panel Control",
@@ -347,7 +392,13 @@ This led to web development exploration using the <a href="#">LAMP</a> stack. My
             ],
             imgType: "icon",
             img: sunnyOutline,
-            links: [{ link: "#", iosIcon: logoGithub, mdIcon: logoGithub }],
+            links: [
+              {
+                link: "../docs/snc-final-project.pdf",
+                iosIcon: documentTextOutline,
+                mdIcon: documentTextSharp,
+              },
+            ],
           },
         ],
       }),

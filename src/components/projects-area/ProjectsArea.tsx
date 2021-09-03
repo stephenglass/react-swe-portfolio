@@ -215,7 +215,12 @@ const ProjectsArea: React.FC<ContainerProps> = (props) => {
                     <div className="links">
                       {project.links &&
                         project.links.map((link: ProjectLinks, k: number) => (
-                          <a key={k} href={link.link}>
+                          <a
+                            key={k}
+                            href={link.link}
+                            target="_blank"
+                            rel="noreferrer"
+                          >
                             <IonIcon ios={link.iosIcon} md={link.mdIcon} />
                           </a>
                         ))}

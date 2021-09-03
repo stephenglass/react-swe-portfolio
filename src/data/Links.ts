@@ -30,7 +30,7 @@ export const menuLinks: MenuLink[] = [
 
 export const footerLinks: FooterLink[] = [
   {
-    url: "#",
+    url: "https://github.com/sglass520",
     iosIcon: logoGithub,
     mdIcon: logoGithub,
   },

@@ -41,6 +41,8 @@ const IntroductionArea: React.FC<ContainerProps> = (props) => {
           color={button.color ?? "primary"}
           fill="outline"
           href={button.link ?? "#"}
+          target="_blank"
+          rel="noreferrer"
           style={{
             paddingRight: props.buttons.length - 1 !== index ? "10px" : "0px",
           }}
