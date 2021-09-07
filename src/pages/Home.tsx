@@ -70,7 +70,7 @@ const Home: React.FC = () => {
 
   useEffect(() => {
     if (isDomRendered.current && visibleElements.length > 0) {
-      console.log("visibleElements: ", visibleElements);
+      // console.log("visibleElements: ", visibleElements);
 
       var index;
       // footer in view. if footer is in view then change logic to set bottom most app section
@@ -89,7 +89,7 @@ const Home: React.FC = () => {
 
       const element = appSections[index].url.substr(1);
       if (sharedValue.lastViewedElement !== element) {
-        console.log("setting to: ", element);
+        // console.log("setting to: ", element);
         setSharedValue({
           ...sharedValue,
           lastViewedElement: appSections[index].title,
@@ -100,13 +100,13 @@ const Home: React.FC = () => {
   }, [isDomRendered, visibleElements]);
 
   const scrollTo = (event: EventType, anchor: string) => {
-    console.log("anchor: ", anchor);
+    // console.log("anchor: ", anchor);
     // verify provided anchor link matches one in the database
     setTimeout(
       () => {
         const element = document.getElementById(`anchor_${anchor}`);
         if (element) {
-          console.log("going to: ", anchor);
+          // console.log("going to: ", anchor);
           element.scrollIntoView({ behavior: "smooth" });
         }
       },

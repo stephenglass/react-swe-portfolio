@@ -27,6 +27,7 @@ import "./theme/globals.scss";
 
 /* Context */
 import { AppContextProvider } from "./AppContext";
+import { redirectRoutes } from "./data/RedirectRoutes";
 
 const App: React.FC = () => {
   return (
@@ -42,6 +43,19 @@ const App: React.FC = () => {
               <Route path="/404" exact={true}>
                 <NoPage />
               </Route>
+
+              {redirectRoutes.map((route, index) => (
+                <Route
+                  key={index}
+                  path={route.path}
+                  exact={true}
+                  render={() => {
+                    window.location.href = route.url;
+                    return null;
+                  }}
+                />
+              ))}
+
               <Redirect to="/404" />
             </IonRouterOutlet>
           </IonSplitPane>
