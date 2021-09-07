@@ -10,7 +10,7 @@ import { FooterLink } from "../components/footer-area/FooterArea";
 export const menuLinks: MenuLink[] = [
   {
     title: "Source Code",
-    url: "/",
+    url: "https://github.com/sglass520/react-swe-portfolio",
     iosIcon: openOutline,
     mdIcon: openSharp,
   },

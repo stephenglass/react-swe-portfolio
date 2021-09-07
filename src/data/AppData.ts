@@ -74,13 +74,13 @@ export const appSections: AppSection[] = [
         buttons: [
           {
             text: "Resume",
-            link: "../docs/Resume_StephenGlass2021_V7.pdf",
+            link: "../docs/StephenGlass_Resume2021_V7.pdf",
             iosIcon: documentOutline,
             mdIcon: documentSharp,
           },
           {
             text: "Email",
-            link: "mailto:sglass520@gmail.com",
+            link: "mailto:stephen@stephen.glass",
             iosIcon: mailOutline,
             mdIcon: mailSharp,
           },
@@ -291,7 +291,13 @@ This led to web development exploration using the <a href="https://en.wikipedia.
             ],
             imgType: "icon",
             img: personOutline,
-            links: [{ link: "#", iosIcon: logoGithub, mdIcon: logoGithub }],
+            links: [
+              {
+                link: "https://github.com/sglass520/react-swe-portfolio",
+                iosIcon: logoGithub,
+                mdIcon: logoGithub,
+              },
+            ],
             ribbon: {
               color: "white",
               background: "var(--ion-color-primary)",
@@ -335,7 +341,7 @@ This led to web development exploration using the <a href="https://en.wikipedia.
                 mdIcon: logoGithub,
               },
               {
-                link: "#",
+                link: "../docs/project-line-counter.pdf",
                 iosIcon: documentTextOutline,
                 mdIcon: documentTextSharp,
               },
@@ -379,7 +385,7 @@ This led to web development exploration using the <a href="https://en.wikipedia.
             img: statsChartOutline,
             links: [
               {
-                link: "#",
+                link: "../docs/project-3band-audio-eq.pdf",
                 iosIcon: documentTextOutline,
                 mdIcon: documentTextSharp,
               },
@@ -396,7 +402,7 @@ This led to web development exploration using the <a href="https://en.wikipedia.
             img: sunnyOutline,
             links: [
               {
-                link: "../docs/snc-final-project.pdf",
+                link: "../docs/project-solar-panels-control.pdf",
                 iosIcon: documentTextOutline,
                 mdIcon: documentTextSharp,
               },
@@ -419,7 +425,7 @@ This led to web development exploration using the <a href="https://en.wikipedia.
             iosIcon: sendOutline,
             mdIcon: sendSharp,
             text: "Email Me",
-            url: "#",
+            url: "mailto:stephen@stephen.glass",
           },
         ],
       }),
