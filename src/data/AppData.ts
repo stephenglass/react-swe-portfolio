@@ -27,6 +27,8 @@ import {
   sunnyOutline,
   documentTextOutline,
   documentTextSharp,
+  sendOutline,
+  sendSharp,
 } from "ionicons/icons";
 import { customIcons } from "./AppMeta";
 import React, { lazy } from "react";
@@ -72,7 +74,7 @@ export const appSections: AppSection[] = [
         buttons: [
           {
             text: "Resume",
-            link: "../docs/Resume_StephenGlass_V7.pdf",
+            link: "../docs/Resume_StephenGlass2021_V7.pdf",
             iosIcon: documentOutline,
             mdIcon: documentSharp,
           },
@@ -409,6 +411,17 @@ This led to web development exploration using the <a href="https://en.wikipedia.
     iosIcon: mailOutline,
     mdIcon: mailSharp,
     divider: true,
-    render: () => React.createElement(ContactArea),
+    render: () =>
+      React.createElement(ContactArea, {
+        text: "Thanks for visiting my portfolio. Check back for any updates!",
+        buttons: [
+          {
+            iosIcon: sendOutline,
+            mdIcon: sendSharp,
+            text: "Email Me",
+            url: "#",
+          },
+        ],
+      }),
   },
 ];

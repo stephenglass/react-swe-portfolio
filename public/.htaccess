@@ -3,6 +3,7 @@ RewriteRule ^(docs)($|/) - [L]
 RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^ index.html [QSA,L]
+ErrorDocument 404 /404
 
 <FilesMatch "\.(html)$">
   FileETag None

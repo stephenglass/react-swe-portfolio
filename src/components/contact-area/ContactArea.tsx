@@ -1,15 +1,29 @@
-import { sendOutline, sendSharp } from "ionicons/icons";
 import { IonButton, IonIcon } from "@ionic/react";
 import "./ContactArea.scss";
 
-const ContactArea: React.FC = () => {
+interface ContactButton {
+  iosIcon: string;
+  mdIcon: string;
+  text: string;
+  url: string;
+}
+
+interface ContainerProps {
+  text: string;
+  buttons?: ContactButton[];
+}
+
+const ContactArea: React.FC<ContainerProps> = (props) => {
   return (
     <div className="contact-container">
-      <p>Thanks for visiting my portfolio. Check back for any updates!</p>
-      <IonButton fill="outline" size="default">
-        <IonIcon slot="start" ios={sendOutline} md={sendSharp} />
-        Email Me
-      </IonButton>
+      <p>{props.text}</p>
+      {props.buttons &&
+        props.buttons.map((button: ContactButton, k: number) => (
+          <IonButton fill="outline" size="default" href={button.url} key={k}>
+            <IonIcon slot="start" ios={button.iosIcon} md={button.mdIcon} />
+            {button.text}
+          </IonButton>
+        ))}
     </div>
   );
 };
