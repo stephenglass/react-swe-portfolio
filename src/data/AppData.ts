@@ -162,8 +162,8 @@ This led to web development exploration using the <a href="https://en.wikipedia.
       }),
   },
   {
-    title: "Sponsored Projects",
-    url: "/consulting",
+    title: "Freelance Projects",
+    url: "/freelance",
     iosIcon: starOutline,
     mdIcon: starSharp,
     divider: true,

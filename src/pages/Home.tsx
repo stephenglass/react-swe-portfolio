@@ -15,6 +15,8 @@ import {
   useCallback,
   Suspense,
 } from "react";
+import "./Home.scss";
+import "./Effect.scss";
 import { useParams } from "react-router";
 import { useHistory } from "react-router-dom";
 import { AppContext } from "../AppContext";
@@ -23,8 +25,6 @@ import { Constants, EventType } from "../data/AppEnums";
 import SectionContainer from "../components/section-container/SectionContainer";
 import SectionDivider from "../components/section-divider/SectionDivider";
 import FooterArea from "../components/footer-area/FooterArea";
-import "./Home.scss";
-import "./Effect.scss";
 import { BackgroundEffect } from "../data/AppMeta";
 
 const Home: React.FC = () => {

@@ -1,6 +1,6 @@
 {
-  "name": "ionic-stephen-portfolio",
-  "version": "0.0.1",
+  "name": "react-swe-portfolio",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "@ionic/react": "^5.5.0",
@@ -61,5 +61,5 @@
       "last 1 safari version"
     ]
   },
-  "description": "An Ionic project"
+  "description": "An Online Software Portfolio"
 }

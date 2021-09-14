@@ -1,5 +1,7 @@
 import { IonIcon } from "@ionic/react";
 import { footerLinks } from "../../data/Links";
+import { appSections } from "../../data/AppData";
+import { chevronUpCircle } from "ionicons/icons";
 import "./FooterArea.scss";
 
 export interface FooterLink {
@@ -9,6 +11,15 @@ export interface FooterLink {
 }
 
 const FooterArea: React.FC = () => {
+  const scrollToTop = () => {
+    const element = document.getElementById(
+      `anchor_${appSections[0].url.substr(1)}`
+    );
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <div className="padding-container">
       <div className="footer">
@@ -21,6 +32,12 @@ const FooterArea: React.FC = () => {
               <IonIcon ios={link.iosIcon} md={link.mdIcon} />
             </a>
           ))}
+
+        <IonIcon
+          className="scroll-icon"
+          icon={chevronUpCircle}
+          onClick={() => scrollToTop()}
+        />
       </div>
     </div>
   );

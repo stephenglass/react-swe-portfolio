@@ -38,8 +38,11 @@
   padding-top: 5px;
   padding-right: 5px;
   text-align: center;
+  .scroll-icon,
   a {
     font-size: 36px;
     color: #757575;
+    cursor: pointer;
+    padding-right: 5px;
   }
 }

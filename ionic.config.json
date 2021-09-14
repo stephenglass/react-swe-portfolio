@@ -1,5 +1,5 @@
 {
-  "name": "ionic-stephen-portfolio",
+  "name": "react-swe-portfolio",
   "integrations": {
     "capacitor": {
       "enabled": false
