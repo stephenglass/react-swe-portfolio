@@ -6,9 +6,9 @@ This project allows you to build a Software Engineer Portfolio by offering pre-m
 
 [Live Demo](https://stephen.glass)
 
-<img src="demo_mobile.png" alt="mobile demo" width="250"/>
+<img src="./docs/demo_mobile.png" alt="mobile demo" width="250"/>
 
-[Desktop](demo_desktop.png)
+[Desktop](./docs/demo_desktop.png)
 
 ## Installation
 
@@ -88,6 +88,8 @@ Theme colors, breakpoints, page effect toggles are all configurable from `theme/
 
 A component to introduce yourself.
 
+<img src="./docs/introductionarea.jpg" alt="component demo" width="500"/>
+
 Component properties:
 
 | Property    | Type                       | Description                            |
@@ -109,6 +111,8 @@ IntroductionButton properties:
 #### AboutArea
 
 A component to give more info about yourself with text, pictures, and your skills.
+
+<img src="./docs/aboutarea.jpg" alt="component demo" width="500"/>
 
 Component properties:
 | Property | Type | Description |
@@ -136,6 +140,8 @@ FavoriteSkills properties:
 
 A component to highlight your most important projects.
 
+<img src="./docs/featuredprojectsarea.jpg" alt="component demo" width="500"/>
+
 Component properties:
 | Property | Type | Description |
 | -------- | ---------------------------- | ---------------------------------------------------------------------- |
@@ -162,6 +168,8 @@ FeaturedProjectTags properties:
 #### ProjectsArea
 
 A component to showcase all of your projects.
+
+<img src="./docs/projectsarea.jpg" alt="component demo" width="500"/>
 
 | Property | Type                 | Description                                          |
 | -------- | -------------------- | ---------------------------------------------------- |
@@ -211,6 +219,8 @@ ProjectRibbon properties:
 #### TimelineArea
 
 A component to render a timeline which can be used to show your work history.
+
+<img src="./docs/timelinearea.jpg" alt="component demo" width="500"/>
 
 Component properties:
 | Property | Type | Description |
