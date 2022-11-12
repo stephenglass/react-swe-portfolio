@@ -9,7 +9,7 @@ $breakpoint-sm: 576px;
 $effect-hue-min: 200;
 $effect-hue-max: 225;
 $effect-brightness: 100%;
-$effect-enable-all: 1;
+$effect-enable-all: 0;
 $effect-enable-mobile: 0;
 
 .split-pane {
@@ -19,13 +19,14 @@ $effect-enable-mobile: 0;
 :root {
   // colors
 
-  --main-page-color: #10111f;
+  --main-page-color: #f4f5f8;
   --side-menu-color: #efefef;
   --cards-color: #efefef;
 
   // text colors
-  --text-color-primary: #bcc2d1;
-  --text-color-secondary: #c5cce0;
+  --text-color-name-title: #10111f;
+  --text-color-primary: #222428;
+  --text-color-secondary: #92949c;
   --text-color-highlight: #4c8dff;
 
   // container sizes
