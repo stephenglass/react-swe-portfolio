@@ -29,6 +29,8 @@ import {
   documentTextSharp,
   sendOutline,
   sendSharp,
+  openOutline,
+  timeOutline,
 } from "ionicons/icons";
 import { customIcons } from "./AppMeta";
 import React, { lazy } from "react";
@@ -96,9 +98,9 @@ export const appSections: AppSection[] = [
     render: () =>
       React.createElement(AboutArea, {
         img: "../assets/img/sg8717.png",
-        text: `My journey into software began in 2008 creating online multiplayer video game modifications using a simple embedded scripting language called <a href="https://www.compuphase.com/pawn/pawnfeatures.htm" target="_blank" rel="noreferrer">PAWN</a>.
+        text: `My journey into software began in 2008 creating online multiplayer video game mods using a simple scripting language called <a href="https://www.compuphase.com/pawn/pawnfeatures.htm" target="_blank" rel="noreferrer">PAWN</a>.
 
-This led to web development exploration using the <a href="https://en.wikipedia.org/wiki/LAMP_(software_bundle)" target="_blank" rel="noreferrer">LAMP</a> stack. My software experience has since grown tremendously to include modern frameworks in addition to embedded software, databases, cloud services, and more.
+This led to exploring web development using the <a href="https://en.wikipedia.org/wiki/LAMP_(software_bundle)" target="_blank" rel="noreferrer">LAMP</a> stack. My software experience has since grown tremendously to include modern frameworks in addition to embedded software, databases, cloud services, and more.
 
 `,
         skills: [
@@ -265,7 +267,7 @@ This led to web development exploration using the <a href="https://en.wikipedia.
             ],
             links: [
               { link: "#", iosIcon: logoGithub, mdIcon: logoGithub },
-              { link: "#", iosIcon: folderOutline, mdIcon: folderSharp },
+              { link: "#", iosIcon: openOutline, mdIcon: openOutline },
             ],
             imgType: "icon",
             img: calculatorOutline,
@@ -390,6 +392,36 @@ This led to web development exploration using the <a href="https://en.wikipedia.
                 mdIcon: documentTextSharp,
               },
             ],
+          },
+          {
+            title: "Clock Out Calculator",
+            description:
+              "Calculate how many hours you worked for the week and what time you should clock out to reach your target goal.",
+            tags: [
+              {
+                name: "TypeScript",
+                color: "danger",
+                icon: customIcons.logoTypeScript,
+              },
+              { name: "React", color: "primary", icon: logoReact },
+              { name: "Ionic", color: "danger", icon: customIcons.logoIonic },
+            ],
+            links: [
+              { link: "#", iosIcon: logoGithub, mdIcon: logoGithub },
+              {
+                link: "https://clock-out-calculator.stephen.glass",
+                iosIcon: openOutline,
+                mdIcon: openOutline,
+              },
+            ],
+            imgType: "icon",
+            img: timeOutline,
+            ribbon: {
+              color: "white",
+              background: "var(--ion-color-danger)",
+              contentType: "text",
+              content: "New",
+            },
           },
           {
             title: "Solar Panel Control",

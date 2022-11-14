@@ -94,10 +94,17 @@ const ProjectsArea: React.FC<ContainerProps> = (props) => {
       } else {
         table[row] = [project];
       }
+
       if (index % columns === columns - 1) {
+        row++;
+      } else if (
+        projects.length - index > 0 &&
+        projects.length - index < columns
+      ) {
         row++;
       }
     });
+
     return table;
   };
 
