@@ -104,6 +104,11 @@ This led to exploring web development using the <a href="https://en.wikipedia.or
 
 `,
         skills: [
+                  {
+            text: "Go",
+            color: "primary",
+            icon: customIcons.logoGoMascot,
+          },
           {
             text: "TypeScript",
             color: "danger",
@@ -145,9 +150,9 @@ This led to exploring web development using the <a href="https://en.wikipedia.or
             icon: customIcons.logoIonic,
           },
           {
-            text: "Docker",
+            text: "Flutter",
             color: "primary",
-            icon: logoDocker,
+            icon: customIcons.logoFlutter,
           },
           {
             text: "SQL",
@@ -157,9 +162,10 @@ This led to exploring web development using the <a href="https://en.wikipedia.or
         ],
         reverse: true,
         favoriteSkills: [
-          { text: "React", img: "../assets/svg/icons8-react-color.svg" },
-          { text: "Angular", img: "../assets/svg/icons8-angular-color.svg" },
-          { text: "Ionic", img: "../assets/svg/icons8-ionic-color.svg" },
+          { text: "Go", img: customIcons.logoGoMascot },
+          { text: "React", img: customIcons.logoReact },
+          { text: "Flutter", img: customIcons.logoFlutter },
+          { text: "Ionic", img: customIcons.logoIonicColor },
         ],
       }),
   },
