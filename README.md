@@ -13,15 +13,15 @@ This project allows you to build a Software Engineer Portfolio by offering pre-m
 ## Installation
 
 [Download](https://nodejs.org/en/download/) Node.js
+Note: This project requires Node v16.x
 
 ```
 git clone https://github.com/sglass520/react-swe-portfolio.git
 ```
 
 ```
-npm install -g @ionic/cli
 npm install
-ionic serve
+npm run start
 ```
 
 ## Configuration
