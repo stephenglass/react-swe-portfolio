@@ -1,6 +1,9 @@
 {
   "name": "react-swe-portfolio",
   "version": "1.0.0",
+  "engines": {
+    "node": "16.x"
+  },
   "private": true,
   "dependencies": {
     "@ionic/react": "^5.9.4",
@@ -15,7 +18,7 @@
     "@types/react-router": "^5.1.19",
     "@types/react-router-dom": "^5.3.3",
     "ionicons": "^5.5.4",
-    "node-sass": "^6.0.1",
+    "node-sass": "^9.0.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-intersection-observer": "^8.34.0",

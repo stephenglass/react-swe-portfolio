@@ -15,5 +15,15 @@ export const customIcons = {
   logoGo: "../assets/svg/go-logo.svg",
   logoGoMascot: "../assets/svg/icons8-golang.svg",
   logoFlutter: "../assets/svg/icons8-flutter.svg",
-  logoReact: "../assets/svg/icons8-react-color.svg"
+  logoReact: "../assets/svg/icons8-react-color.svg",
+  logoSpringBoot: "../assets/svg/spring-boot.svg",
+  logoJava: "../assets/svg/java.svg",
+  logoCSharp: "../assets/svg/c-sharp.svg",
+  logoAzure: "../assets/svg/azure.svg",
+  logoAngular: "../assets/svg/icons8-angular-color.svg",
+  logoTailwind: "../assets/svg/tailwindcss.svg",
+  logoKubernetes: "../assets/svg/kubernetes.svg",
+  logoDocker: "../assets/svg/docker.svg",
+  logoDotnet: "../assets/svg/dotnet-icon.svg",
+  logoDotnetVertical: "../assets/svg/dotnet-vertical.svg",
 };

@@ -31,6 +31,7 @@ import {
   sendSharp,
   openOutline,
   timeOutline,
+  logoLinkedin,
 } from "ionicons/icons";
 import { customIcons } from "./AppMeta";
 import React, { lazy } from "react";
@@ -70,15 +71,15 @@ export const appSections: AppSection[] = [
     render: () =>
       React.createElement(IntroductionArea, {
         name: "Stephen Glass.",
-        subtitle: "Software Engineer at AT&T.",
+        subtitle: "Senior Software Engineer at AT&T.",
         description:
           "I build web apps and more using latest technologies. Check out what I've been working on.",
         buttons: [
           {
-            text: "Resume",
-            link: "../docs/StephenGlass_Resume2021_V7.pdf",
-            iosIcon: documentOutline,
-            mdIcon: documentSharp,
+            text: "LinkedIn",
+            link: "https://www.linkedin.com/in/stephen-glass/",
+            iosIcon: logoLinkedin,
+            mdIcon: logoLinkedin,
           },
           {
             text: "Email",
@@ -104,15 +105,15 @@ This led to exploring web development using the <a href="https://en.wikipedia.or
 
 `,
         skills: [
-                  {
-            text: "Go",
-            color: "primary",
-            icon: customIcons.logoGoMascot,
-          },
           {
             text: "TypeScript",
             color: "danger",
             icon: customIcons.logoTypeScript,
+          },
+          {
+            text: "Go",
+            color: "primary",
+            icon: customIcons.logoGoMascot,
           },
           {
             text: "React",
@@ -125,9 +126,9 @@ This led to exploring web development using the <a href="https://en.wikipedia.or
             icon: logoAngular,
           },
           {
-            text: "Express",
+            text: "Java",
             color: "tertiary",
-            icon: customIcons.logoExpress,
+            icon: customIcons.logoJava,
           },
           {
             text: "Node.js",
@@ -145,78 +146,98 @@ This led to exploring web development using the <a href="https://en.wikipedia.or
             icon: customIcons.logoPhp,
           },
           {
-            text: "Ionic",
-            color: "warning",
-            icon: customIcons.logoIonic,
+            text: "Tailwind CSS",
+            color: "primary",
+            icon: customIcons.logoTailwind,
           },
           {
-            text: "Flutter",
+            text: "Azure",
             color: "primary",
-            icon: customIcons.logoFlutter,
+            icon: customIcons.logoAzure,
+          },
+          {
+            text: "Spring Boot",
+            color: "success",
+            icon: customIcons.logoSpringBoot,
+          },
+          {
+            text: ".NET",
+            color: "tertiary",
+            icon: customIcons.logoDotnet,
           },
           {
             text: "SQL",
-            color: "tertiary",
+            color: "warning",
             icon: customIcons.logoMysql,
+          },
+          {
+            text: "Docker",
+            color: "primary",
+            icon: customIcons.logoDocker,
+          },
+          {
+            text: "Kubernetes",
+            color: "primary",
+            icon: customIcons.logoKubernetes,
           },
         ],
         reverse: true,
         favoriteSkills: [
-          { text: "Go", img: customIcons.logoGoMascot },
+          { text: "Angular", img: customIcons.logoAngular },
           { text: "React", img: customIcons.logoReact },
-          { text: "Flutter", img: customIcons.logoFlutter },
-          { text: "Ionic", img: customIcons.logoIonicColor },
+          { text: ".NET", img: customIcons.logoDotnetVertical },
+          { text: "Kubernetes", img: customIcons.logoKubernetes },
         ],
       }),
   },
-  {
-    title: "Freelance Projects",
-    url: "/freelance",
-    iosIcon: starOutline,
-    mdIcon: starSharp,
-    divider: true,
-    info: "Projects created professionally as consultant or freelancer",
-    render: () =>
-      React.createElement(FeaturedProjectsArea, {
-        columns: 2,
-        projects: [
-          {
-            title: "Pain Manangement App",
-            subtitle: "Rowan University",
-            img: "../assets/img/pain_management.png",
-            description:
-              "Developing a mobile application to be used by patients for recording pain, depression, and biometric data monitored by doctors.",
-            tags: [
-              {
-                name: "TypeScript",
-                color: "danger",
-                icon: customIcons.logoTypeScript,
-              },
-              { name: "React", color: "primary", icon: logoReact },
-              { name: "Ionic", color: "danger", icon: customIcons.logoIonic },
-            ],
-          },
-          {
-            title: "Mortality Tool App",
-            description:
-              "Cross-platform web application for ICU patient data collection and prediction of mortality using machine learning algorithms on cloud.",
-            subtitle: "Cooper Medical School",
-            img: "../assets/img/mortality.png",
-            tags: [
-              {
-                name: "TypeScript",
-                color: "danger",
-                icon: customIcons.logoTypeScript,
-              },
-              { name: "React", color: "primary", icon: logoReact },
-              { name: "Ionic", color: "danger", icon: customIcons.logoIonic },
-              { name: "Python", color: "warning", icon: logoPython },
-              { name: "PHP", color: "secondary", icon: customIcons.logoPhp },
-            ],
-          },
-        ],
-      }),
-  },
+  // {
+  //   title: "Freelance Projects",
+  //   url: "/freelance",
+  //   iosIcon: starOutline,
+  //   mdIcon: starSharp,
+  //   divider: true,
+  //   info: "Projects created professionally as consultant or freelancer",
+  //   render: () =>
+  //     React.createElement(FeaturedProjectsArea, {
+  //       columns: 2,
+  //       projects: [
+  //         {
+  //           title: "Pain Manangement App",
+  //           subtitle: "Rowan University",
+  //           img: "../assets/img/pain_management.png",
+  //           description:
+  //             "Developing a mobile application to be used by patients for recording pain, depression, and biometric data monitored by doctors.",
+  //           tags: [
+  //             {
+  //               name: "TypeScript",
+  //               color: "danger",
+  //               icon: customIcons.logoTypeScript,
+  //             },
+  //             { name: "React", color: "primary", icon: logoReact },
+  //             { name: "Ionic", color: "danger", icon: customIcons.logoIonic },
+  //           ],
+  //         },
+  //         {
+  //           title: "Mortality Tool App",
+  //           description:
+  //             "Cross-platform web application for ICU patient data collection and prediction of mortality using machine learning algorithms on cloud.",
+  //           subtitle: "Cooper Medical School",
+  //           img: "../assets/img/mortality.png",
+  //           tags: [
+  //             {
+  //               name: "TypeScript",
+  //               color: "danger",
+  //               icon: customIcons.logoTypeScript,
+  //             },
+  //             { name: "React", color: "primary", icon: logoReact },
+  //             { name: "Ionic", color: "danger", icon: customIcons.logoIonic },
+  //             { name: "Python", color: "warning", icon: logoPython },
+  //             { name: "PHP", color: "secondary", icon: customIcons.logoPhp },
+  //           ],
+  //         },
+  //       ],
+  //     }),
+  // },
   {
     title: "Experience",
     url: "/experience",
@@ -230,16 +251,14 @@ This led to exploring web development using the <a href="https://en.wikipedia.or
           {
             subtitle: "2021",
             title: "AT&T",
-            undertitle: "Sr. Specialist Software Engineer",
-            description: `Modernized critical on-premises applications by converting
-                      to Angular and Microsoft Azure cloud backends.`,
+            undertitle: "Senior Software Engineer",
+            description: `Developing modern applications using Angular, React, Spring Boot, Terraform, and Kubernetes.`,
           },
           {
             subtitle: "2019",
             title: "Lockheed Martin",
             undertitle: "Member of Engineering Staff",
-            description: `Developed C++ software for radar subarrays and created support
-                      tools using Python. Deployment on-site.`,
+            description: `C++ software for Intel FPGAs and embedded systems. Tools for software development and testing.`,
           },
         ],
       }),
