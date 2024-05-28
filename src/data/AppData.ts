@@ -185,7 +185,7 @@ This led to exploring web development using the <a href="https://en.wikipedia.or
         favoriteSkills: [
           { text: "Angular", img: customIcons.logoAngular },
           { text: "React", img: customIcons.logoReact },
-          { text: ".NET", img: customIcons.logoDotnetVertical },
+          { text: "Spring Boot", img: customIcons.logoSpringBoot },
           { text: "Kubernetes", img: customIcons.logoKubernetes },
         ],
       }),

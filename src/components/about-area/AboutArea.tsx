@@ -79,7 +79,7 @@ const AboutArea: React.FC<ContainerProps> = ({
       {favoriteSkills && (
         <div className="favorite-skills">
           <br />
-          <h2>Favorite Technology</h2>
+          <h2>Pinned Technology</h2>
           <IonGrid>
             <IonRow>
               {favoriteSkills.map((skill, index) => (
