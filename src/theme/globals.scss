@@ -14,12 +14,13 @@ $effect-enable-mobile: 0;
 
 .split-pane {
   --side-width: 5%;
+  --border: 1px solid #e0dede;
 }
 
 :root {
   // colors
   --main-page-color: #fafafa;
-  
+
   --side-menu-color: #f2f2f2;
   --cards-color: #f2f2f2;
 
